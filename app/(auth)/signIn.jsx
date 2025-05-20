@@ -6,6 +6,8 @@ import { images } from "../../constants";
 import TextField from "../../components/TextField";
 import { Link, router } from "expo-router";
 import ButtonFilled from "../../components/ButtonFilled";
+import Dropdown from "../../components/Dropdown";
+import RadioButtons from "../../components/RadioButtons";
 
 const SignIn = () => {
   return (
@@ -34,7 +36,7 @@ const SignIn = () => {
         <ButtonFilled title="Login" onClick={() => router.push("/home")} />
       </View>
 
-      <View className="flex flex-row gap-1 justify-center items-end h-[25vh]">
+      <View className="flex flex-row gap-1 justify-center items-end mt-3">
         <Text className="text-[#787575]">Don't have an account?</Text>
         <Link href={"/register"} className=" text-blue-500">
           Register

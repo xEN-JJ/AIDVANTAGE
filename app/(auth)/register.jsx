@@ -16,11 +16,13 @@ import TextField from "../../components/TextField";
 import { Link } from "expo-router";
 import ButtonFilled from "../../components/ButtonFilled";
 import ButtonOutlined from "../../components/ButtonOutline";
+import RadioButtons from "../../components/RadioButtons";
 
 import axios from "axios";
 
 const Register = () => {
   const { width } = useWindowDimensions();
+  const [gender, setGender] = useState("Male");
 
   const steps = [
     [
@@ -126,6 +128,15 @@ const Register = () => {
                       onChangeText={(text) => handleChange(field.key, text)}
                     />
                   ))}
+                  {/* <RadioButtons
+                    options={[
+                      { label: "Male", value: "Male" },
+                      { label: "Female", value: "Female" },
+                    ]}
+                    checkedValue={gender}
+                    onChange={setGender}
+                    style=""
+                  /> */}
                 </View>
               </KeyboardAvoidingView>
             </ScrollView>
