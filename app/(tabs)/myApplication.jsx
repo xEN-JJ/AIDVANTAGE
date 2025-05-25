@@ -4,7 +4,7 @@ import TextField from "../../components/TextField";
 import { icons } from "../../constants";
 import ButtonFilled from "../../components/ButtonFilled";
 import { router } from "expo-router";
-import ApplicationForm from "../(medical)/application-form";
+import ApplicationForm from "../(medical)/ApplicationForm";
 import ApplicationItems from "../../components/ApplicationItems";
 
 const MyApplications = () => {
