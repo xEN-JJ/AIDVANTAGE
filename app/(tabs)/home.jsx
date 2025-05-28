@@ -11,7 +11,8 @@ const Home = () => {
   const assistance = [
     {
       title: "Medical Assistance",
-      description: "Lorem",
+      description:
+        "Provides financial support for individuals and families in crisis who need assistance with medical expenses.",
       link: "/medical-assistance",
       cover: images.medicalCover,
     },

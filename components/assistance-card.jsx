@@ -15,7 +15,7 @@ const AssistanceCard = ({ title, description, link, cover }) => {
 
       <View className="">
         <Text className="font-rsemibold mt-3">{title}</Text>
-        <Text className="text-gray-500 font-rlight text-sm line-clamp-3">
+        <Text className="text-gray-500 font-rlight text-sm line-clamp-5">
           {description}
         </Text>
         <Pressable onPress={() => router.push(link)}>

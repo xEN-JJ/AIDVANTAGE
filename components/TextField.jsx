@@ -7,7 +7,7 @@ const TextField = ({
   secureTextEntry,
   isError,
   value,
-  onChangeText, 
+  onChangeText,
 }) => {
   const [internalValue, setInternalValue] = useState(value || "");
 
@@ -55,9 +55,9 @@ const TextField = ({
   };
 
   return (
-    <View className="rounded-md justify-center mb-3">
+    <View className="rounded-md justify-center mb-3 w-full ">
       <Animated.View
-        className="absolute justify-center px-3 bg-slate-100 z-40 ml-5 top-6"
+        className="absolute justify-center px-3 bg-[#fefffe] z-40 ml-5 top-6"
         style={{
           transform: [{ translateY: transY }, { translateX: transX }],
         }}
@@ -67,7 +67,7 @@ const TextField = ({
         </Text>
       </Animated.View>
       <TextInput
-        className={`rounded-md text-[#787575] font-rregular h-[60px] w-full max-w-[22rem] px-5 ${
+        className={`rounded-md text-[#787575] font-rregular h-[60px] w-full  px-5 ${
           isError
             ? "focus:border-red-500 border-red-500 border-2"
             : "focus:border-blue-500 focus:border-2 border border-[#787575]"

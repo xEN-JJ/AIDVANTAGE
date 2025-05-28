@@ -23,4 +23,5 @@ export default {
   pluscircle: (props) => (
     <AntDesign name="pluscircle" size={22} color="black" {...props} />
   ),
+  plus: (props) => <AntDesign name="plus" size={22} color="black" {...props} />,
 };

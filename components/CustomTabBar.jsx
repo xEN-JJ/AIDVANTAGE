@@ -30,7 +30,7 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
   return (
     <View
       onLayout={onTabBarLayout}
-      className="absolute bottom-[60] flex-row items-center justify-center bg-white mx-12 py-4 rounded-full shadow-black shadow-lg"
+      className="absolute bottom-[70] flex-row items-center justify-center bg-white mx-12 py-4 rounded-full shadow-black shadow-lg"
     >
       <Animated.View
         className="bg-primary border-2 border-primary rounded-[25] mx-1"

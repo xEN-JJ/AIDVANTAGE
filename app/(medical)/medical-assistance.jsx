@@ -8,7 +8,7 @@ import { router } from "expo-router";
 const MedicalAssistance = () => {
   return (
     <ScrollView className="h-full">
-      <View className="items-center justify-center">
+      <View className="items-center justify-center pb-8">
         <View className="rounded-xl w-[90%] mt-7 justify-center items-center">
           <Image
             source={images.medicalCover}
@@ -66,7 +66,7 @@ const MedicalAssistance = () => {
           </Text>
         </View>
 
-        <View className="mx-5 gap-3">
+        <View className="mx-5 gap-3 mt-3">
           <ExpansionPanel title="Eligibility" />
           <ExpansionPanel title="Requirements" />
         </View>

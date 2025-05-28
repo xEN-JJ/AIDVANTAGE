@@ -29,6 +29,12 @@ const MyApplications = () => {
     },
   ];
 
+  const statusRoutes = {
+    approved: "applications/approveApplicationInfo",
+    declined: "applications/declineApplicationInfo",
+    pending: "applications/approveApplicationInfo",
+  };
+
   return (
     <SafeAreaView className="mx-5">
       <ScrollView>
@@ -52,6 +58,12 @@ const MyApplications = () => {
                 assistance={item.typeOfAssistance}
                 dateOfApplication={item.dateOfApplication}
                 status={item.status}
+                onClick={() =>
+                  router.push({
+                    pathname: statusRoutes[item.status],
+                    params: { title: item.typeOfAssistance },
+                  })
+                }
               />
             )}
           />

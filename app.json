@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "medical-assistance",
-    "slug": "medical-assistance",
-    "scheme": "medical-assistance-scheme",
+    "name": "AIDVANTAGE",
+    "slug": "AIDVANTAGE",
+    "scheme": "AIDVANTAGE-scheme",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo-blue.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {

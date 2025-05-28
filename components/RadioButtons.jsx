@@ -4,10 +4,10 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 import RadioGroup from "react-native-radio-buttons-group";
 
-const RadioButtons = ({ options, checkedValue, onChange, style }) => {
+const RadioButtons = ({ options, checkedValue, onChange, style, label }) => {
   return (
-    <View className=" w-[22rem]  rounded-lg border border-gray-400">
-      <Text className="my-2 mx-3">Label</Text>
+    <View className=" w-[22rem]  rounded-lg ">
+      <Text className="my-2 mx-3 font-rmedium text-lg">{label}</Text>
       {options.map((option) => {
         let active = checkedValue == option.value;
         return (

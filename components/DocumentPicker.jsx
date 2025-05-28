@@ -3,7 +3,7 @@ import * as DocumentPicker from "expo-document-picker";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useState } from "react";
 
-const DocumentPickerField = () => {
+const DocumentPickerField = ({ title }) => {
   const [name, setName] = useState("");
   const [size, setSize] = useState(0);
   const [Uri, setUri] = useState("");
@@ -21,7 +21,7 @@ const DocumentPickerField = () => {
   };
   return (
     <View
-      className={`justify-center border h-[68] max-w-[22rem] rounded-xl justify-center px-5 ${name ? "border-primary bg-primary " : "border-gray-500"}`}
+      className={`justify-center border h-[68] max-w-[23rem] w-full rounded-xl  px-5 ${name ? "border-primary bg-primary " : "border-gray-500"}`}
     >
       <TouchableOpacity
         className="bg-transparent justify-between flex flex-row"
@@ -31,7 +31,7 @@ const DocumentPickerField = () => {
           <Text
             className={`font-rmedium text-lg mt-2 ${name ? "text-white" : ""}`}
           >
-            Hello
+            {title}
           </Text>
           {name && (
             <Text
