@@ -66,15 +66,15 @@ const MedicalAssistance = () => {
           </Text>
         </View>
 
-        <View className="mx-5 gap-3">
+        <View className="mx-5 gap-3 my-3">
           <ExpansionPanel title="Eligibility" />
           <ExpansionPanel title="Requirements" />
         </View>
 
-        <View className="w-full px-5 my-7">
+        <View className="w-full px-5 my-7 pb-10">
           <ButtonFilled
             title="Apply"
-            onClick={() => router.push("/application-form")}
+            onClick={() => router.push("/ApplicationForm")}
           />
         </View>
       </View>

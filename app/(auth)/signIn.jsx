@@ -6,8 +6,8 @@ import { images } from "../../constants";
 import TextField from "../../components/TextField";
 import { Link, router } from "expo-router";
 import ButtonFilled from "../../components/ButtonFilled";
-import Dropdown from "../../components/Dropdown";
-import RadioButtons from "../../components/RadioButtons";
+
+import { required, isEmail } from "../../backend/util/ValidationRule";
 
 const SignIn = () => {
   return (
@@ -24,8 +24,8 @@ const SignIn = () => {
       </View>
 
       <View className="mt-[80px] w-full">
-        <TextField title="Email Address" isError={true} />
-        <TextField title="Password" secureTextEntry={true} isError={true} />
+        <TextField title="Email Address" validation={[required, isEmail]} />
+        <TextField title="Password" secureTextEntry={true} />
         <View className="items-end ">
           <Link href="/reset-password" className=" text-blue-500">
             Forgot Password
