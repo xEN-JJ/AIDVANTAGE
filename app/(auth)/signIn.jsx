@@ -7,6 +7,8 @@ import TextField from "../../components/TextField";
 import { Link, router } from "expo-router";
 import ButtonFilled from "../../components/ButtonFilled";
 
+import { required, isEmail } from "../../backend/util/ValidationRule";
+
 const SignIn = () => {
   return (
     <SafeAreaView className="h-full mx-7">
@@ -22,8 +24,8 @@ const SignIn = () => {
       </View>
 
       <View className="mt-[80px] w-full">
-        <TextField title="Email Address" isError={true} />
-        <TextField title="Password" secureTextEntry={true} isError={true} />
+        <TextField title="Email Address" validation={[required, isEmail]} />
+        <TextField title="Password" secureTextEntry={true} />
         <View className="items-end ">
           <Link href="/reset-password" className=" text-blue-500">
             Forgot Password
@@ -34,7 +36,7 @@ const SignIn = () => {
         <ButtonFilled title="Login" onClick={() => router.push("/home")} />
       </View>
 
-      <View className="flex flex-row gap-1 justify-center items-end h-[25vh]">
+      <View className="flex flex-row gap-1 justify-center items-end mt-3">
         <Text className="text-[#787575]">Don't have an account?</Text>
         <Link href={"/register"} className=" text-blue-500">
           Register

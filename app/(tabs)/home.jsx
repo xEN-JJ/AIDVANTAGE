@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 import TextField from "../../components/TextField";
-import AssistanceCard from "../../components/assistance-card";
+import AssistanceCard from "../../components/AssistanceCard";
 import { images } from "../../constants";
 
 const Home = () => {
