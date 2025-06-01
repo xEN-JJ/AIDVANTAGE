@@ -20,7 +20,7 @@ import ButtonFilled from "../../components/ButtonFilled";
 import Dropdown from "../../components/Dropdown";
 import RadioButtons from "../../components/RadioButtons";
 
-const ApplyForm = () => {
+const ApplicationForm = () => {
   const { width } = useWindowDimensions();
   const translateX = useRef(new Animated.Value(0)).current;
 
@@ -30,46 +30,11 @@ const ApplyForm = () => {
   const [uploadedDocs, setUploadedDocs] = useState({});
 
   const documents = [
-    { key: "deathCert", title: "Relative’s Death Cert." },
-    { key: "oscaId", title: "OSCA ID (if Senior Citizen)" },
-    { key: "pwdId", title: "PWD ID (if PWD)" },
-    { key: "soloParentId", title: "Solo Parent ID (if Solo Parent)" },
-    { key: "funeralContract", title: "Original Funeral Contract" },
-    { key: "affidavit", title: "Affidavit of Residency (if Resident of Naga)" },
+    { key: "certIng", title: "Certificate of Indigency" },
+    { key: "studentId", title: "Student ID" },
+    { key: "poadId", title: "Statement of Account" },
+    { key: "validId", title: "Valid ID (Voters/Certification)" },
   ];
-}
-
-const ApplicationForm = () => {
-  const { width } = useWindowDimensions();
-
-  const steps = [
-    [
-      { key: "firstName", placeholder: "First Name" },
-      { key: "lastName", placeholder: "Last Name" },
-      { key: "username", placeholder: "Username" },
-      { key: "phone", placeholder: "Phone Number" },
-      { key: "email", placeholder: "Email" },
-      { key: "password", placeholder: "Password", secure: true },
-      { key: "confirmPassword", placeholder: "Confirm Password", secure: true },
-      { key: "dob", placeholder: "Date of Birth" },
-      { key: "country", placeholder: "Country" },
-      { key: "city", placeholder: "City" },
-    ],
-    [
-      { key: "email", placeholder: "Email" },
-      { key: "password", placeholder: "Password", secure: true },
-      { key: "confirmPassword", placeholder: "Confirm Password", secure: true },
-      { key: "dob", placeholder: "Date of Birth" },
-    ],
-    [
-      { key: "country", placeholder: "Country", document: "true" },
-      { key: "city", placeholder: "City" },
-    ],
-  ];
-
-  const [step, setStep] = useState(0);
-  const [formData, setFormData] = useState({});
-  const translateX = useRef(new Animated.Value(0)).current;
 
   const handleChange = (key, value) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
@@ -150,12 +115,11 @@ const ApplicationForm = () => {
             flexDirection: "row",
             transform: [{ translateX }],
           }}
-          className={"mt-2"}
         >
           {/* Step 1: Personal Info */}
           <View
             style={{ width }}
-            className="flex-1 justify-center items-center mx-7 gap-2"
+            className="flex-1 justify-center items-center mx-7"
           >
             <Dropdown />
             {/* { key: "type", label: "Type of Assistance" }, */}
@@ -209,8 +173,8 @@ const ApplicationForm = () => {
           </View>
 
           {/* Step 2: Family Composition */}
-          <View style={{ width }} className="w-full items-center mt-5 h-[30%]">
-            <View className="w-full items-center =">
+          <View style={{ width }} className="w-full items-center mt-5">
+            <View className="w-full items-center">
               {household.map((member, index) => (
                 <View
                   key={index}
@@ -220,7 +184,7 @@ const ApplicationForm = () => {
                   <TouchableOpacity
                     onPress={() => removeHouseholdMember(index)}
                   >
-                    <Text className="text-red-500"> Remove</Text>
+                    <Text className="text-red-500">🗑 Remove</Text>
                   </TouchableOpacity>
                 </View>
               ))}
@@ -241,7 +205,6 @@ const ApplicationForm = () => {
                   key={doc.key}
                   title={doc.title}
                   onUpload={() => handleDocumentUpload(doc.key)}
-                  label={doc.title}
                 />
               ))}
             </View>
@@ -259,16 +222,15 @@ const ApplicationForm = () => {
           )}
           <ButtonFilled
             title={step === 2 ? "Submit" : "Next"}
-            p
             onClick={
               step === 2
                 ? () => {
-                    console.log({ formData, household, uploadedDocs });
-                    Alert.alert(
-                      "Submitted",
-                      "Your application has been submitted.",
-                    );
-                  }
+                  console.log({ formData, household, uploadedDocs });
+                  Alert.alert(
+                    "Submitted",
+                    "Your application has been submitted.",
+                  );
+                }
                 : handleNext
             }
           />
@@ -277,5 +239,4 @@ const ApplicationForm = () => {
     </SafeAreaView>
   );
 };
-
 export default ApplicationForm;

@@ -21,12 +21,13 @@ const Home = () => {
       link: "/educational-assistance",
     },
     {
-      title: "burial Assistance",
+      title: "Burial Assistance",
       description: "Lorem",
-      link: "/medical-assistance",
+      link: "/burial-assistance",
+      cover: images.burialCover,
     },
     {
-      title: "burial Assistance",
+      title: "Relief Assistance",
       description: "Lorem",
       link: "/medical-assistance",
     },
