@@ -23,7 +23,7 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
 
   const animatedStyle = useAnimatedStyle(() => {
     return {
-      transform: [{ translateX: tabPositionX.value - 92 }],
+      transform: [{ translateX: tabPositionX.value }],
     };
   });
 
@@ -32,17 +32,19 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
       onLayout={onTabBarLayout}
       className="absolute bottom-[70] flex-row items-center justify-center bg-white mx-12 py-4 rounded-full shadow-black shadow-lg"
     >
+      {/* Animated highlight background (active tab) */}
       <Animated.View
-        className="bg-primary border-2 border-primary rounded-[25] mx-1"
+        className="bg-primary border-2 border-primary rounded-[28] absolute"
         style={[
           animatedStyle,
           {
-            height: dimension.height - 15,
-            width: buttonWidth - 15,
-            position: "absolute",
+            height: dimension.height - 12,
+            width: buttonWidth - 12,       
+            left: 6,                       
           },
         ]}
-      ></Animated.View>
+      />
+
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label =
@@ -56,8 +58,10 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
 
         const onPress = () => {
           tabPositionX.value = withSpring(buttonWidth * index, {
-            duration: 1500,
+            damping: 15,
+            stiffness: 150,
           });
+
           const event = navigation.emit({
             type: "tabPress",
             target: route.key,
@@ -65,7 +69,7 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
           });
 
           if (!isFocused && !event.defaultPrevented) {
-            navigation.navigate(route.name, route.params);
+            navigation.navigate(route.name);
           }
         };
 

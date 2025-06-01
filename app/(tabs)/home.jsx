@@ -18,8 +18,9 @@ const Home = () => {
     },
     {
       title: "Educational Assistance",
-      description: "Lorem",
+      description: "Provides support such as financial aid and resources to help students succeed.",
       link: "/educational-assistance",
+      cover: images.educationalCover,
     },
     {
       title: "burial Assistance",
