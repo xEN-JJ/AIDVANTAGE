@@ -1,30 +1,47 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
-import ButtonFilled from "../../components/ButtonFilled";
-import { images } from "../../constants";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const SignInWeb = () => {
+import { images } from "../../constants";
+import TextField from "../../components/TextField";
+import { Link, router } from "expo-router";
+import ButtonFilled from "../../components/ButtonFilled";
+
+const SignIn = () => {
   return (
-    <View>
-      <View className="h-[5rem] w-full bg-primary"></View>
-      <View className="flex flex-row justify-around items-center my-10 ">
-        <View className="justify-center items-center">
-          {/* <Image source={images.basta} /> */}
-          <Image
-            source={images.logoBlue}
-            resizeMethod="contain"
-            className="h-1 w-1 object-contain"
-          />
-          <ButtonFilled title="Login" otherStyles={"w-[50]"} />
-        </View>
-        <View>
-          <View className="bg-white w-[30rem] h-[30rem] rounded-2xl">
-            <View></View>
-          </View>
+    <SafeAreaView className="h-full mx-7">
+      <View className="mt-[70px]">
+        <Text className="text-center text-xl text-gray-700 font-rlight">
+          Welcome to
+        </Text>
+        <Image
+          source={images.logoBlue}
+          resizeMode="contain"
+          className="h-[15vh] w-full"
+        />
+      </View>
+
+      <View className="mt-[80px] w-full">
+        <TextField title="Email Address" isError={true} />
+        <TextField title="Password" secureTextEntry={true} isError={true} />
+        <View className="items-end ">
+          <Link href="/reset-password" className=" text-blue-500">
+            Forgot Password
+          </Link>
         </View>
       </View>
-    </View>
+      <View className="mt-10">
+        <ButtonFilled title="Login" onClick={() => router.push("/home")} />
+      </View>
+
+      <View className="flex flex-row gap-1 justify-center items-end h-[25vh]">
+        <Text className="text-[#787575]">Don't have an account?</Text>
+        <Link href={"/register"} className=" text-blue-500">
+          Register
+        </Link>
+      </View>
+    </SafeAreaView>
   );
 };
 
-export default SignInWeb;
+export default SignIn;
