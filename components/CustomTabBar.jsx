@@ -39,8 +39,8 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
           animatedStyle,
           {
             height: dimension.height - 12,
-            width: buttonWidth - 12,       
-            left: 6,                       
+            width: buttonWidth - 12,
+            left: 6,
           },
         ]}
       />

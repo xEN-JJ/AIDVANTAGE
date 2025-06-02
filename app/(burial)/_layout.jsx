@@ -5,9 +5,9 @@ export default function MedicalLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="medical-assistance"
+        name="burial-assistance"
         options={{
-          title: "Medical Assistance",
+          title: "Burial Assistance",
         }}
       />
       <Stack.Screen
