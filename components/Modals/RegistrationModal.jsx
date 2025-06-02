@@ -8,7 +8,6 @@ const RegistrationModal = ({ visible, onClick }) => {
       visible={visible}
       animationType="slide"
       className="items-center justify-center"
-      navigationBarTranslucent={true}
     >
       <Pressable className="h-full w-full" onPress={onClick}>
         <View className="items-center justify-center h-full w-full mb-10">

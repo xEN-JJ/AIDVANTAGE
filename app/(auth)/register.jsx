@@ -11,7 +11,6 @@ import {
 import { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, router } from "expo-router";
-import axios from "axios";
 
 import { images } from "../../constants";
 import TextField from "../../components/TextField";
@@ -70,18 +69,6 @@ const Register = () => {
 
   const handleSubmit = async () => {
     setVisible(true);
-    // try {
-    //   const response = await axios.post("/register", formData);
-    //   if (response.status === 200 || response.status === 201) {
-    //     console.log("User registered successfully:", response.data);
-    //     // navigate or show success
-    //   }
-    // } catch (error) {
-    //   console.error(
-    //     "Registration failed:",
-    //     error.response?.data || error.message,
-    //   );
-    // }
   };
 
   const handleModalCLick = () => {
@@ -90,49 +77,51 @@ const Register = () => {
   };
 
   return (
-    <SafeAreaView className="h-full mx-6 mb-10">
-      <ScrollView className="" showsVerticalScrollIndicator={false}>
-        <View className="mt-[70px] items-center">
-          <Image
-            source={images.logoBlue}
-            resizeMode="contain"
-            className="h-[15vh] w-full"
-          />
-          <Text className="text-center text-xl text-gray-700 font-rlight mt-1">
-            Create your profile to access municipal assistance and services.
-          </Text>
-          {/* Step Indicator */}
-          <View className="flex-row mt-2 gap-1">
-            {steps.map((_, index) => (
-              <View
-                key={index}
-                className={`w-2 h-2 rounded-full ${step >= index ? "bg-blue-800 w-[15]" : "bg-gray-300"}`}
-              />
-            ))}
+    <SafeAreaView className="flex-1 bg-white">
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={{ flex: 1 }}
+      >
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ paddingHorizontal: 24, paddingBottom: 40 }}
+        >
+          <View className="mt-[70px] items-center">
+            <Image
+              source={images.logoBlue}
+              resizeMode="contain"
+              className="h-[15vh] w-full"
+            />
+            <Text className="text-center text-xl text-gray-700 font-rlight mt-1">
+              Create your profile to access municipal assistance and services.
+            </Text>
+            <View className="flex-row mt-2 gap-1">
+              {steps.map((_, index) => (
+                <View
+                  key={index}
+                  className={`w-2 h-2 rounded-full ${
+                    step >= index ? "bg-blue-800 w-[15]" : "bg-gray-300"
+                  }`}
+                />
+              ))}
+            </View>
           </View>
-        </View>
 
-        {/* Animated Stepper */}
-        <View className={`mt-5 h-[50%]`}>
-          <Animated.View
-            style={{
-              width: width * steps.length,
-              flexDirection: "row",
-              transform: [{ translateX }],
-            }}
-          >
-            {steps.map((fields, index) => (
-              <ScrollView
-                key={index}
-                style={{ width }}
-                contentContainerStyle={{ paddingBottom: 10 }}
-                showsVerticalScrollIndicator={false}
-              >
-                <KeyboardAvoidingView
-                  behavior={Platform.OS === "ios" ? "padding" : "height"}
-                  style={{ flex: 1 }}
+          <View style={{ overflow: "hidden", marginTop: 20 }}>
+            <Animated.View
+              style={{
+                flexDirection: "row",
+                width: width * steps.length,
+                transform: [{ translateX }],
+              }}
+            >
+              {steps.map((fields, index) => (
+                <View
+                  key={index}
+                  style={{ width, paddingHorizontal: 0 }}
                 >
-                  <View className="px-1 pt-3">
+                  <View style={{ width: "86%" }}>
                     {fields.map((field) => (
                       <TextField
                         key={field.key}
@@ -143,32 +132,32 @@ const Register = () => {
                       />
                     ))}
                   </View>
-                </KeyboardAvoidingView>
-              </ScrollView>
-            ))}
-          </Animated.View>
-        </View>
+                </View>
+              ))}
+            </Animated.View>
+          </View>
 
-        {/* Navigation Buttons */}
-        <View className="gap-3">
-          {step !== 0 && <ButtonOutlined title="Back" onClick={handleBack} />}
-          {step === steps.length - 1 ? (
-            <ButtonFilled title="Sign Up" onClick={handleSubmit} />
-          ) : (
-            <ButtonFilled title="Next" onClick={handleNext} />
-          )}
-        </View>
+          {/* Navigation Buttons */}
+          <View className="gap-3 mt-5">
+            {step !== 0 && <ButtonOutlined title="Back" onClick={handleBack} />}
+            {step === steps.length - 1 ? (
+              <ButtonFilled title="Sign Up" onClick={handleSubmit} />
+            ) : (
+              <ButtonFilled title="Next" onClick={handleNext} />
+            )}
+          </View>
 
-        {/* Login Link */}
-        <View className="flex flex-row gap-1 justify-center items-end mt-4 mb-[5rem] ">
-          <Text className="text-[#787575]">Already have an account?</Text>
-          <Link href="/sign-in" className="text-blue-500">
-            Login Now
-          </Link>
-        </View>
+          {/* Login Link */}
+          <View className="flex flex-row gap-1 justify-center items-end mt-4 mb-[5rem] ">
+            <Text className="text-[#787575]">Already have an account?</Text>
+            <Link href="/signIn" className="text-blue-500">
+              Login Now
+            </Link>
+          </View>
 
-        <RegistrationModal visible={visible} onClick={handleModalCLick} />
-      </ScrollView>
+          <RegistrationModal visible={visible} onClick={handleModalCLick} />
+        </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
