@@ -19,6 +19,7 @@ const AssistanceDropDown = ({
       setOpen={setOpen}
       setValue={setValue}
       setItems={setItems}
+      listMode="SCROLLVIEW"
       placeholder={propPlaceHolder}
       {...rest}
     />

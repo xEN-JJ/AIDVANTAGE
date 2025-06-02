@@ -44,10 +44,12 @@ const ApplicationForm = () => {
   ]);
 
   const documents = [
-    { key: "certIng", title: "Certificate of Indigency" },
-    { key: "studentId", title: "Student ID" },
-    { key: "poadId", title: "Statement of Account" },
-    { key: "validId", title: "Valid ID (Voters/Certification)" },
+    { key: "RDC", title: "Relative's Death Certificate" },
+    { key: "oscaID", title: "OSCA ID" },
+    { key: "pwdID", title: "PWD ID" },
+    { key: "Solo Parent ID", title: "Solo Parent ID" },
+    { key: "OFC", title: "Original Funeral Contract" },
+    { key: "AoF", title: "Affidavit of Residency" },
   ];
 
   const handleChange = (key, value) => {
@@ -137,10 +139,11 @@ const ApplicationForm = () => {
           >
             <DropDown
               value={typeOfAssistance}
-              setValue={setTypeOfAssistance}
+              setValue={setTypeOfAssistance} S
               items={typeOfAssistanceItems}
               setItems={setTypeOfAssistanceItems}
               placeholder="Type of Assistance"
+              listMode="SCROLLVIEW"
               style={{
                 borderColor: "#787575", // grey border
                 marginBottom: 16,
@@ -179,6 +182,7 @@ const ApplicationForm = () => {
               items={civilStatusItems}
               setItems={setCivilStatusItems}
               placeholder="Civil Status"
+              listMode="SCROLLVIEW"
               style={{
                 borderColor: "#000", // black border
                 marginBottom: 16,
@@ -234,6 +238,7 @@ const ApplicationForm = () => {
                   key={doc.key}
                   title={doc.title}
                   onUpload={() => handleDocumentUpload(doc.key)}
+                  label={doc.title}
                 />
               ))}
             </View>

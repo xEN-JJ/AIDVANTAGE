@@ -23,7 +23,7 @@ const Home = () => {
     },
     {
       title: "Burial Assistance",
-      description: "Lorem",
+      description: "Provides financial support to families in crisis to help cover funeral and burial expenses for a deceased loved one.",
       link: "/burial-assistance",
       cover: images.burialProfile,
     },
