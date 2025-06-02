@@ -90,7 +90,7 @@ This application offers a comprehensive suite of features to enhance the user ex
 
 ## Technology Stack
 
-* **Frontend:** React Native
+* **Frontend:** React Native, Nativewind
 
 ## Installation & Setup (Placeholder - replace with actual instructions)
 
