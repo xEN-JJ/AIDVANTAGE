@@ -5,14 +5,13 @@ import { icons } from "../constants";
 const ButtonFilled = ({
   title,
   onClick,
-  otherStyles,
   isDisable,
   prefixIcon,
   suffixIcon,
 }) => {
   return (
     <TouchableOpacity
-      className="flex flex-row items-center justify-center bg-primary w-full max-w-[23rem] h-[50px] rounded-md focus:border"
+      className="flex flex-row items-center justify-center bg-primary w-full h-[50px] rounded-lg shadow-md"
       onPress={onClick}
       disabled={isDisable}
     >

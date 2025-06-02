@@ -6,7 +6,7 @@ import InformationBox from "../../components/MyApplicationPages/InformationBox";
 import FilePreview from "../../components/MyApplicationPages/FilePreview";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-const DeclineApplication = () => {
+const DeclineApplication = ({ uri }) => {
   const { status, title } = useLocalSearchParams();
   const navigation = useNavigation();
 
@@ -31,13 +31,8 @@ const DeclineApplication = () => {
         </Text>
 
         <Text className="">
-          Date Approved:{"  "}
-          <Text className="font-rbold mx-3">Medical Assistance</Text>
-        </Text>
-
-        <Text className="">
           Status:{"  "}
-          <Text className="font-rbold mx-3 text-green-500">Approved</Text>
+          <Text className="font-rbold mx-3 text-red-500">Declined</Text>
         </Text>
       </View>
 
@@ -57,7 +52,12 @@ const DeclineApplication = () => {
       </View>
 
       <View className="mx-7 mt-2">
-        <FilePreview status={status} />
+        <FilePreview
+          status={status}
+          uri={
+            "https://external-preview.redd.it/lana-del-rey-shares-artwork-from-upcoming-single-henry-come-v0-olfm3_9kKLAlzQd3HpNRFDH0ZmJhuuTP_Sh3EpvEN_Q.jpg?auto=webp&s=3b02835f0928e3c3ce1fd31594bdbaf321c0a935"
+          }
+        />
       </View>
     </ScrollView>
   );

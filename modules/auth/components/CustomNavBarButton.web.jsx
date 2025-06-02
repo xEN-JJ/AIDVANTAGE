@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import tw from 'twrnc';
+import tw from 'twrnc'; 
 
 export default function NavBarButton({ text = "Button", onPress, buttonClassName, textClassName }) {
   return (

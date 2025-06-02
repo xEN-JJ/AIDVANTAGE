@@ -76,8 +76,8 @@ const ApplicationForm = () => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <SafeAreaView className="flex-1 bg-white mb-10">
+      <ScrollView showsVerticalScrollIndicator={false} className="">
         {/* indicator */}
         <View className="flex-row items-center justify-center mt-2 mb-2 w-full ">
           <Text className="text-3xl text-blue-700 font-bold ">
