@@ -26,7 +26,7 @@ const SignIn = () => {
       <View className="mt-[80px] w-full">
         <TextField title="Email Address" validation={[required, isEmail]} />
         <TextField title="Password" secureTextEntry={true} />
-        <View className="items-end ">
+        <View className="items-start pl-1">
           <Link href="/reset-password" className=" text-blue-500">
             Forgot Password
           </Link>
