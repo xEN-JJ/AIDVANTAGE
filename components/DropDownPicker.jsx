@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DropDownPicker from "react-native-dropdown-picker";
 
-const CustomDropDownPicker = ({
+const CustomDropDown = ({
   value,
   setValue,
   items,
@@ -27,4 +27,4 @@ const CustomDropDownPicker = ({
   );
 };
 
-export default CustomDropDownPicker;
+export default CustomDropDown;

@@ -8,6 +8,7 @@ import {
   useWindowDimensions,
   Alert,
 } from "react-native";
+import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DocumentPickerField from "../../components/DocumentPicker";
 import TextField from "../../components/TextField";
@@ -139,8 +140,7 @@ const ApplicationForm = () => {
           >
             <DropDown
               value={typeOfAssistance}
-              setValue={setTypeOfAssistance}
-              S
+              setValue={setTypeOfAssistance} S
               items={typeOfAssistanceItems}
               setItems={setTypeOfAssistanceItems}
               placeholder="Type of Assistance"
@@ -185,7 +185,7 @@ const ApplicationForm = () => {
               placeholder="Civil Status"
               listMode="SCROLLVIEW"
               style={{
-                borderColor: "#000", // black border
+                borderColor: "#000",
                 marginBottom: 16,
               }}
               dropDownContainerStyle={{
@@ -207,8 +207,8 @@ const ApplicationForm = () => {
           </View>
 
           {/* Step 2: Family Composition */}
-          <View style={{ width }} className="w-full items-center mt-5">
-            <View className="w-full items-center px-7">
+          <View style={{ width }} className="w-full px-7 items-center mt-5">
+            <View className="w-full items-center">
               {household.map((member, index) => (
                 <View
                   key={index}
@@ -247,7 +247,7 @@ const ApplicationForm = () => {
         </Animated.View>
 
         {/* Buttons */}
-        <View className="w-full max-w-md mt-6 mb-10 items-center gap-3 px-7">
+        <View className="w-full px-7 mt-6 mb-10 items-center gap-3">
           {step > 0 && (
             <ButtonOutlined
               className="border border-blue-700 py-3 rounded-md mb-3"
@@ -260,12 +260,13 @@ const ApplicationForm = () => {
             onClick={
               step === 2
                 ? () => {
-                    console.log({ formData, household, uploadedDocs });
-                    Alert.alert(
-                      "Submitted",
-                      "Your application has been submitted.",
-                    );
-                  }
+                  console.log({ formData, household, uploadedDocs });
+                  Alert.alert(
+                    "Submitted",
+                    "Your application has been submitted.",
+                  );
+                  router.push("/myApplication");
+                }
                 : handleNext
             }
           />

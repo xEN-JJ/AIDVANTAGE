@@ -53,10 +53,10 @@ const Home = () => {
             start={{ x: 0.5, y: -0.9 }}
             end={{ x: 1, y: 0 }}
             style={{
-              position: "absolute",
+              position: 'absolute',
               width: "100%",
               height: "100%",
-              borderRadius: "0.75rem",
+              borderRadius: "0.75rem,
             }}
           />
           <Image
