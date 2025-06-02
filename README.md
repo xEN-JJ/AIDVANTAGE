@@ -90,30 +90,93 @@ This application offers a comprehensive suite of features to enhance the user ex
 
 ## Technology Stack
 
-* **Frontend:** React Native, Nativewind
+* **Frontend:** React Native, Nativewind, TailwindCSS
+* **Frameworks & Tools:** Expo, Expo Router
+* **Language:** JavaScript
 
-## Installation & Setup (Placeholder - replace with actual instructions)
+## Dependencies
 
-1.  **Clone the repository:**
+### Runtime Dependencies
+
+These packages are required to run the application:
+
+- `@react-native-picker/picker: 2.11.0` – Picker dropdown for forms.
+- `axios: ^1.9.0` – For making API requests.
+- `expo: ^53.0.9` – Core framework for running React Native apps.
+- `expo-constants: ~17.1.6` – Access app constants.
+- `expo-document-picker: ~13.1.5` – Enables document uploads.
+- `expo-image-picker: ~16.1.4` – Allows image selection from camera or gallery.
+- `expo-linking: ~7.1.4` – Handle deep linking within the app.
+- `expo-router: ~5.0.7` – File-based routing system.
+- `expo-status-bar: ~2.2.3` – Manage status bar styling.
+- `expo-updates: ~0.28.13` – Over-the-air update support.
+- `expo-linear-gradient: ~14.1.4` – Gradient background support.
+- `nativewind: ^4.1.23` – Tailwind CSS integration for React Native.
+- `prettier: ^3.5.3` – Code formatting.
+- `react: 19.0.0` – Core React framework.
+- `react-dom: 19.0.0` – React DOM bindings (for web).
+- `react-native: 0.79.2` – Core library for building mobile apps.
+- `react-native-collapsible: ^1.6.2` – Expand/collapse UI component.
+- `react-native-dropdown-picker: ^5.4.6` – Custom dropdown UI.
+- `react-native-progress: ^5.0.1` – Visual progress bars.
+- `react-native-radio-buttons-group: ^3.1.0` – Grouped radio buttons.
+- `react-native-reanimated: ~3.17.4` – Enhanced animations.
+- `react-native-safe-area-context: 5.4.0` – Handles safe area layout.
+- `react-native-screens: ~4.10.0` – Native screen transitions.
+- `react-native-web: ^0.20.0` – Web compatibility for React Native.
+- `tailwindcss: ^3.4.17` – Utility-first CSS framework.
+- `twrnc: ^4.8.0` – Tailwind Runtime for Native Components.
+- `typescript: ~5.8.3` – Typed JavaScript for better reliability.
+
+### Development Dependencies
+
+These tools are used for development, linting, and type-checking:
+
+- `@babel/core: ^7.20.0` – JavaScript compiler.
+- `@types/react: ~19.0.10` – Type definitions for React.
+- `eslint: ^8.57.1` – Code quality checker.
+- `eslint-config-expo: ~9.2.0` – Expo ESLint presets.
+- `eslint-config-prettier: ^10.1.5` – Turns off conflicting ESLint rules.
+- `eslint-plugin-prettier: ^5.4.0` – Integrates Prettier with ESLint.
+- `typescript: ~5.8.3` – Language for type-safe JavaScript.
+
+## Installation & Setup
+
+> Make sure Node.js, npm/yarn, and Expo CLI are installed before starting.
+
+1. **Clone the repository:**
     ```bash
     git clone https://github.com/xEN-JJ/AIDVANTAGE.git
     ```
-2.  **Navigate to the project directory:**
+
+2. **Navigate to the project directory:**
     ```bash
     cd Aidvantage
     ```
-3.  **Install dependencies:**
+
+3. **Install dependencies:**
     ```bash
     npm install
-    # or yarn install
+    # or
+    yarn install
     ```
-4.  **Run the application:**
+
+4. **Run the application:**
     ```bash
-    npx react-native run-android # For Android
-    npx react-native run-ios    # For iOS (requires macOS and Xcode)
+    npx expo start        # Launches Expo dev server
+    npx react-native run-android   # For Android devices
+    npx react-native run-ios       # For iOS (requires macOS and Xcode)
     ```
 
-## Contributing
+## Contributors
 
-We welcome contributions! Please feel free to fork the repository, make your changes, and submit a pull request.
+This mobile application was developed by the following students as part of a ADET (Applications Development and Emerging Tech) Final Project.
 
+- **John Joseph P. Asoro**
+- **Jovel B. Portuguez**
+- **Weneilyn B. Paronda**
+- **Graham Russell A.Gonzales**
+
+**ADET Project Title:** Aidvantage – The Upper Hand in Hard Times  
+**Institution:** University of Nueva Caceres
+**Academic Year:** 2024–2025
