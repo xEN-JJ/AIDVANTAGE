@@ -96,7 +96,7 @@ This application offers a comprehensive suite of features to enhance the user ex
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/Aidvantage.git](https://github.com/your-username/Aidvantage.git)
+    git clone https://github.com/xEN-JJ/AIDVANTAGE.git
     ```
 2.  **Navigate to the project directory:**
     ```bash
@@ -117,10 +117,3 @@ This application offers a comprehensive suite of features to enhance the user ex
 
 We welcome contributions! Please feel free to fork the repository, make your changes, and submit a pull request.
 
-## License
-
-[Specify your project's license here, e.g., MIT License, Apache 2.0, etc.]
-
----
-
-**Note:** Remember to replace `[Your Name/Team Name]`, `[Node.js/Python/PHP/.NET]`, `[MongoDB/PostgreSQL/MySQL]`, `[Firebase/AWS Amplify/Heroku]`, `https://raw.githubusercontent.com/your-username/Aidvantage/main/screenshots/`, and `[Specify your project's license here]` with your actual project details and ensure you create a `screenshots` folder in your GitHub repository to host the images.
