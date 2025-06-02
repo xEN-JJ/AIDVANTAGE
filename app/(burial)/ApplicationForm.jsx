@@ -3,12 +3,9 @@ import {
   View,
   Text,
   ScrollView,
-  TextInput,
   TouchableOpacity,
   Animated,
   useWindowDimensions,
-  KeyboardAvoidingView,
-  Platform,
   Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -17,8 +14,8 @@ import TextField from "../../components/TextField";
 import ProgressBar from "../../components/ProgressBar";
 import ButtonOutlined from "../../components/ButtonOutline";
 import ButtonFilled from "../../components/ButtonFilled";
-import Dropdown from "../../components/Dropdown";
 import RadioButtons from "../../components/RadioButtons";
+import DropDown from "../../components/DropDownPicker";
 
 const ApplicationForm = () => {
   const { width } = useWindowDimensions();
@@ -28,6 +25,23 @@ const ApplicationForm = () => {
   const [formData, setFormData] = useState({});
   const [household, setHousehold] = useState([]);
   const [uploadedDocs, setUploadedDocs] = useState({});
+
+  const [typeOfAssistance, setTypeOfAssistance] = useState(null);
+  const [typeOfAssistanceItems, setTypeOfAssistanceItems] = useState([
+    { label: "Medical Assistance", value: "medical" },
+    { label: "Educational Assistance", value: "educational" },
+    { label: "Burial Assistance", value: "burial" },
+    { label: "Relief Assistance", value: "relief" },
+  ]);
+
+  const [civilStatus, setCivilStatus] = useState(null);
+  const [civilStatusItems, setCivilStatusItems] = useState([
+    { label: "Single", value: "single" },
+    { label: "Married", value: "married" },
+    { label: "Separated", value: "separated" },
+    { label: "Divorced", value: "divorced" },
+    { label: "Widowed", value: "widowed" },
+  ]);
 
   const documents = [
     { key: "certIng", title: "Certificate of Indigency" },
@@ -121,8 +135,21 @@ const ApplicationForm = () => {
             style={{ width }}
             className="flex-1 justify-center items-center mx-7"
           >
-            <Dropdown />
-            {/* { key: "type", label: "Type of Assistance" }, */}
+            <DropDown
+              value={typeOfAssistance}
+              setValue={setTypeOfAssistance}
+              items={typeOfAssistanceItems}
+              setItems={setTypeOfAssistanceItems}
+              placeholder="Type of Assistance"
+              style={{
+                borderColor: "#787575", // grey border
+                marginBottom: 16,
+              }}
+              dropDownContainerStyle={{
+                borderColor: "#787575",
+              }}
+              zIndex={2000}
+            />
             {[
               { key: "firstName", label: "First Name" },
               { key: "lastName", label: "Last Name" },
@@ -146,19 +173,21 @@ const ApplicationForm = () => {
               checkedValue={formData["gender"]}
               onChange={(value) => handleChange("gender", value)}
             />
-
-            <Dropdown
-              onValueChange={(value) => handleChange("civilStatus", value)}
-              selectedValue={formData["civilStatus"] || ""}
-              label="Civil Status"
-              prompt={"Civil Status"}
-              options={[
-                { label: "Single", value: "single" },
-                { label: "Married", value: "married" },
-                { label: "Widowed", value: "widowed" },
-              ]}
+            <DropDown
+              value={civilStatus}
+              setValue={setCivilStatus}
+              items={civilStatusItems}
+              setItems={setCivilStatusItems}
+              placeholder="Civil Status"
+              style={{
+                borderColor: "#000", // black border
+                marginBottom: 16,
+              }}
+              dropDownContainerStyle={{
+                borderColor: "#000",
+              }}
+              zIndex={1000}
             />
-
             {[
               { key: "address", label: "Address" },
               { key: "occupation", label: "Occupation" },
