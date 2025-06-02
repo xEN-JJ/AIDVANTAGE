@@ -4,7 +4,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 const RadioButtons = ({ label, options, checkedValue, onChange, style }) => {
   return (
-    <View className=" w-[22rem]  rounded-lg ">
+    <View className=" w-[22rem] rounded-lg">
       <Text className="my-1 mx-3 text-lg font-rmedium text-primary">
         {label}
       </Text>

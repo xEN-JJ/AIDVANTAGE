@@ -1,4 +1,4 @@
-import { View, Text, Pressable, ScrollView } from "react-native";
+import { View, Text, Pressable, ScrollView, Image } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
@@ -6,6 +6,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import TextField from "../../components/TextField";
 import AssistanceCard from "../../components/AssistanceCard";
 import { images } from "../../constants";
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Home = () => {
   const assistance = [
@@ -45,7 +46,19 @@ const Home = () => {
           </Pressable>
         </View>
 
-        <View className="w-full h-[120px] bg-primary rounded-xl"></View>
+        <View className="w-full h-[120px] rounded-xl justify-center items-center overflow-hidden">
+          <LinearGradient
+            colors={['#2563eb', '#1e40af']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={{ position: 'absolute', width: '100%', height: '100%' }}
+          />
+          <Image
+            source={images.logoWhite}
+            style={{ height: 120, width: "80%" }}
+            resizeMode="contain"
+          />
+        </View>
 
         <View>
           <Text className="text-3xl font-rbold mt-10 text-blue-500">

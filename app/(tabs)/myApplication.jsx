@@ -11,19 +11,25 @@ const MyApplications = () => {
     {
       applicationId: 1,
       typeOfAssistance: "Medical Assistance",
-      dateOfApplication: "02/18/2004",
+      dateOfApplication: "02/18/2024",
       status: "pending",
     },
     {
       applicationId: 1,
-      typeOfAssistance: "Medical Assistance",
-      dateOfApplication: "02/18/2004",
+      typeOfAssistance: "Educational Assistance",
+      dateOfApplication: "06/28/2024",
       status: "declined",
     },
     {
       applicationId: 1,
-      typeOfAssistance: "Medical Assistance",
-      dateOfApplication: "02/18/2004",
+      typeOfAssistance: "Burial Assistance",
+      dateOfApplication: "11/11/2024",
+      status: "approved",
+    },
+    {
+      applicationId: 1,
+      typeOfAssistance: "Relief Assistance",
+      dateOfApplication: "04/09/2025",
       status: "approved",
     },
   ];

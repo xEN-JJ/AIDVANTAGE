@@ -184,7 +184,7 @@ const ApplicationForm = () => {
               placeholder="Civil Status"
               listMode="SCROLLVIEW"
               style={{
-                borderColor: "#000", // black border
+                borderColor: "#000",
                 marginBottom: 16,
               }}
               dropDownContainerStyle={{
@@ -206,7 +206,7 @@ const ApplicationForm = () => {
           </View>
 
           {/* Step 2: Family Composition */}
-          <View style={{ width }} className="w-full items-center mt-5">
+          <View style={{ width }} className="w-full px-7 items-center mt-5">
             <View className="w-full items-center">
               {household.map((member, index) => (
                 <View
@@ -246,7 +246,7 @@ const ApplicationForm = () => {
         </Animated.View>
 
         {/* Buttons */}
-        <View className="w-full max-w-md mt-6 mb-10 items-center gap-3">
+        <View className="w-full px-7 mt-6 mb-10 items-center gap-3">
           {step > 0 && (
             <ButtonOutlined
               className="border border-blue-700 py-3 rounded-md mb-3"
