@@ -66,13 +66,19 @@ const FilePreview = ({ status, uri }) => {
             backgroundColor: "rgba(0,0,0,0.7)", // translucent black
             justifyContent: "center",
             alignItems: "center",
+            paddingHorizontal: 50,
           }}
           onPress={handleClose}
         >
           <View>
             <Image
               source={{ uri }}
-              style={{ height: 350, width: 400, resizeMode: "contain" }}
+              style={{
+                flex: 1,
+                height: 350,
+                width: 400,
+                resizeMode: "contain",
+              }}
             />
           </View>
         </Pressable>

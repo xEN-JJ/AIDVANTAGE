@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import DropDownPicker from 'react-native-dropdown-picker';
+import React, { useState } from "react";
+import DropDownPicker from "react-native-dropdown-picker";
 
 const CustomDropDown = ({
   value,
@@ -20,6 +20,7 @@ const CustomDropDown = ({
       setValue={setValue}
       setItems={setItems}
       listMode="SCROLLVIEW"
+      maxHeight={300}
       placeholder={propPlaceHolder}
       {...rest}
     />
