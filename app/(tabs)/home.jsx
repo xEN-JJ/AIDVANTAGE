@@ -24,7 +24,7 @@ const Home = () => {
       title: "Burial Assistance",
       description: "Lorem",
       link: "/burial-assistance",
-      cover: images.burialCover,
+      cover: images.burialProfile,
     },
     {
       title: "Relief Assistance",

@@ -5,13 +5,13 @@ import ExpansionPanel from "../../components/ExpansionPanel";
 import ButtonFilled from "../../components/ButtonFilled";
 import { router } from "expo-router";
 
-const Burial = () => {
+const BurialAssistance = () => {
   return (
     <ScrollView className="h-full">
       <View className="items-center justify-center">
         <View className="rounded-xl w-[90%] mt-7 justify-center items-center">
           <Image
-            source={images.educationalCover}
+            source={images.burialCover}
             resizeMode="cover"
             className="w-full h-[30vh] rounded-xl"
           />
@@ -23,47 +23,45 @@ const Burial = () => {
             <Text className="font-rsemibold">
               City Social Welfare and Development Office
             </Text>{" "}
-            (CSWDO) is committed to supporting the academic aspirations of its
-            residents through the Educational Assistance Program. This
-            initiative aims to provide financial support to students from
-            marginalized sectors, enabling them to continue their education and
-            achieve their full potential.
+            aims to support families during difficult times through the Burial Assistance Program. 
+            This initiative is designed to provide financial assistance to cover funeral and related expenses, 
+            ensuring that families can honor their deceased loved ones without undue financial strain.
           </Text>
 
-          <Text className="font-rsemibold text-2xl py-5 uppercase text-primary px-6">
+          <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             Objectives
           </Text>
           <Text className="px-6 text-justify font-rlight text-black text-base/6 text-pretty">
-            1. To provide financial assistance for educational expenses, including tuition fees, school supplies, and other related costs.{"\n\n"}
-            2. To reduce the financial burden on students and families, ensuring uninterrupted access to quality education.{"\n\n"}
-            3. To promote equal educational opportunities for underprivileged and vulnerable sectors within the community.
+            1. To provide timely financial support for funeral and burial expenses.{"\n\n"}
+            2. To assist families in transporting the deceased to their residence or burial site.{"\n\n"}
+            3. To alleviate the financial burden associated with cremation or burial services for marginalized and vulnerable sectors.
           </Text>
 
-          <Text className="font-rsemibold text-2xl py-5 uppercase text-primary px-6">
+          <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             Services Offered
           </Text>
           <Text className="px-6 text-justify font-rlight text-black text-base/6 text-pretty">
-            • <Text className="font-rsemibold">Tuition Fee Assistance:</Text> Support for partial or full payment of tuition fees for qualified students.{"\n\n"}
-            • <Text className="font-rsemibold">School Supplies Assistance:</Text> Provision of essential school materials to alleviate the cost of educational needs.{"\n\n"}
-            • <Text className="font-rsemibold">Transportation Allowance:</Text> Assistance for students who need financial aid to commute to and from their educational institutions.{"\n\n"}
-            • <Text className="font-rsemibold">Miscellaneous Fee Support:</Text> Coverage for laboratory, project, and other school-related fees.
+            • <Text className="font-rsemibold">Funeral Cost Assistance:</Text> Financial support to cover funeral-related expenses, including funeral home services.{"\n\n"}
+            • <Text className="font-rsemibold">Transport of Remains:</Text> Assistance in transporting the deceased from the place of death to their residence or burial site.{"\n\n"}
+            • <Text className="font-rsemibold">Cremation Cost Support:</Text> Coverage for cremation expenses, ensuring a dignified send-off.
           </Text>
 
-          <Text className="font-rsemibold text-2xl py-5 uppercase text-primary px-6">
+          <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             How to Apply
           </Text>
           <Text className="px-6 text-justify font-rlight text-black text-base/6 text-pretty">
             1. Visit the City Social Welfare and Development Office (CSWDO) during office hours (8:00 AM – 5:00 PM).{"\n\n"}
-            2. Prepare and submit the following required documents:{"\n"}
-            • Request Letter: Addressed to the CSWDO Director.{"\n"}
-            • Valid ID (e.g., School ID, Government ID).{"\n"}
-            • School Certification or Enrollment Proof: Certificate of Enrollment or Statement of Account (SOA).{"\n"}
-            • Report Card or Transcript of Records: For academic performance validation.{"\n"}
-            • Barangay Certification: Indicating the applicant’s residency and indigency status.{"\n\n"}
+            2. Submit all required documents, including:{"\n"}
+            • Photocopy of the deceased's Death Certificate.{"\n"}
+            • OSCA ID and Certification of Membership (for Senior Citizens).{"\n"}
+            • PWD ID and Certification of Membership (for Persons with Disabilities).{"\n"}
+            • Solo Parent ID (if applicable).{"\n"}
+            • Affidavit of residency (if the deceased died outside Naga City but was a registered resident of Naga City).{"\n"}
+            • Original Funeral Contract.{"\n\n"}
             3. Undergo an interview or assessment conducted by program staff to evaluate the applicant’s needs and eligibility.
           </Text>
 
-          <Text className="font-rsemibold text-2xl py-5 uppercase text-primary px-6">
+          <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             Contact Information
           </Text>
           <Text className="px-6 text-justify font-rlight text-black text-base/6 text-pretty">
@@ -74,10 +72,11 @@ const Burial = () => {
           </Text>
 
           <Text className="font-rsemibold text-xl py-5 px-6 text-primary">
-            Commitment to Education and Opportunity
+            Commitment to Health and Welfare
           </Text>
           <Text className="px-6 pb-3 text-justify font-rlight text-black text-base/6 text-pretty">
-            The Educational Assistance Program is part of the local government’s commitment to fostering a brighter future for its residents. By addressing the financial challenges of education, the CSWDO aims to empower students to reach their academic goals, contribute to their communities, and achieve lifelong success.
+            The Burial Assistance Program is part of the local government's ongoing commitment to support the community in times of crisis. 
+            By addressing funeral-related needs, the CSWDO seeks to provide dignity and relief to grieving families.
           </Text>
         </View>
 

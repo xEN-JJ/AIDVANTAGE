@@ -46,7 +46,6 @@ const TextField = ({
     }
   };
 
-  // Run validation with debounce
   useEffect(() => {
     if (debounceTimer.current) global.clearTimeout(debounceTimer.current);
 
@@ -77,7 +76,7 @@ const TextField = ({
   return (
     <View className="rounded-md justify-center mb-3 w-full">
       <Animated.View
-        className="absolute justify-center px-3 bg-slate-100 z-40 ml-5 top-6"
+        className="absolute justify-center px-3 bg-white z-40 ml-5 top-6"
         style={{
           transform: [{ translateY: transY }, { translateX: transX }],
         }}
@@ -88,7 +87,7 @@ const TextField = ({
       </Animated.View>
 
       <TextInput
-        className={`rounded-md text-[#787575] font-rregular h-[60px] w-full max-w-[22rem] px-5 ${
+        className={`rounded-md text-[#787575] font-rregular h-[60px] px-5 ${
           isError
             ? "border-red-500 border-2"
             : "border border-[#787575] focus:border-blue-500 focus:border-2"
