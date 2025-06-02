@@ -11,7 +11,7 @@ export default function MedicalLayout() {
         }}
       />
       <Stack.Screen
-        name="application-form"
+        name="ApplicationForm"
         options={{
           title: "Application Form",
         }}

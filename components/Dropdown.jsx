@@ -6,7 +6,7 @@ const Dropdown = (pickerTitle) => {
   const [selectedItem, setSelectedItem] = useState();
 
   return (
-    <View className="border-2 border-gray-500 rounded-lg">
+    <View className="border border-[#787575] rounded-lg w-full">
       <Picker
         selectedValue={selectedItem}
         onValueChange={(itemValue, itemIndex) => setSelectedItem(itemValue)}

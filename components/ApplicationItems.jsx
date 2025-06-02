@@ -1,7 +1,12 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
 
-const ApplicationItems = ({ assistance, dateOfApplication, status }) => {
+const ApplicationItems = ({
+  assistance,
+  dateOfApplication,
+  status,
+  onClick,
+}) => {
   const statusClasses = {
     pending: {
       border: "border-[#0F71F1]",
@@ -24,6 +29,7 @@ const ApplicationItems = ({ assistance, dateOfApplication, status }) => {
     <Pressable
       className={`h-[70px] mt-5 rounded-2xl px-4 justify-between items-center flex flex-row border 
     ${statusClasses[status].border} ${statusClasses[status].background}`}
+      onPress={onClick}
     >
       <View className="">
         <Text className="font-rbold text-gray-700 text-lg ">{assistance}</Text>

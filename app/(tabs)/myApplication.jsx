@@ -3,8 +3,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import TextField from "../../components/TextField";
 import { icons } from "../../constants";
 import ButtonFilled from "../../components/ButtonFilled";
-import { router } from "expo-router";
-import ApplicationForm from "../(medical)/ApplicationForm";
+import { Link, router } from "expo-router";
+
 import ApplicationItems from "../../components/ApplicationItems";
 
 const MyApplications = () => {
@@ -29,6 +29,12 @@ const MyApplications = () => {
     },
   ];
 
+  const statusLink = {
+    approved: "Applications/ApproveApplication",
+    declined: "Applications/DeclineApplication",
+    pending: "Applications/PendingApplication",
+  };
+
   return (
     <SafeAreaView className="mx-5">
       <ScrollView>
@@ -39,7 +45,7 @@ const MyApplications = () => {
         <View>
           <ButtonFilled
             title={"Apply"}
-            onClick={() => router.push("/application-form")}
+            onClick={() => router.push("/ApplicationForm")}
             prefixIcon={"pluscircle"}
           />
         </View>
@@ -52,6 +58,15 @@ const MyApplications = () => {
                 assistance={item.typeOfAssistance}
                 dateOfApplication={item.dateOfApplication}
                 status={item.status}
+                onClick={() =>
+                  router.push({
+                    pathname: statusLink[item.status],
+                    params: {
+                      title: item.typeOfAssistance,
+                      status: item.status,
+                    },
+                  })
+                }
               />
             )}
           />
