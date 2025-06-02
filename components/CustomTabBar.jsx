@@ -30,7 +30,7 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
   return (
     <View
       onLayout={onTabBarLayout}
-      className="absolute bottom-[70] flex-row items-center justify-center bg-white mx-12 py-4 rounded-full shadow-black shadow-lg"
+      className="absolute bottom-[50] flex-row items-center justify-center bg-white mx-12 py-4 rounded-full shadow-black shadow-lg"
     >
       {/* Animated highlight background (active tab) */}
       <Animated.View

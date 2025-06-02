@@ -22,12 +22,12 @@ const DeclineApplication = ({ uri }) => {
         </Text>
         <Text className="">
           Nature of Assistance:{"  "}
-          <Text className="font-rbold mx-3">Medical Assistance</Text>
+          <Text className="font-rbold mx-3">Educational Assistance</Text>
         </Text>
 
         <Text className="">
           Date of Submission:{"  "}
-          <Text className="font-rbold mx-3">03/03/2025</Text>
+          <Text className="font-rbold mx-3">June 24, 2024</Text>
         </Text>
 
         <Text className="">
@@ -55,7 +55,7 @@ const DeclineApplication = ({ uri }) => {
         <FilePreview
           status={status}
           uri={
-            "https://imgv2-2-f.scribdassets.com/img/document/426522326/original/512af8de0a/1?v=1"
+            "https://www.lamudi.com.ph/journal/wp-content/uploads/2023/02/1024px-UMID_EMV_sample-1024x655.jpg"
           }
         />
       </View>

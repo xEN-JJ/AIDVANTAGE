@@ -19,8 +19,9 @@ const Home = () => {
     },
     {
       title: "Educational Assistance",
-      description: "Lorem",
+      description: "Provides financial support to students from low-income families to help cover school-related expenses such as tuition, supplies, and transportation.",
       link: "/educational-assistance",
+      cover: images.burialProfile,
     },
     {
       title: "Burial Assistance",
@@ -31,8 +32,9 @@ const Home = () => {
     },
     {
       title: "Relief Assistance",
-      description: "Lorem",
-      link: "/medical-assistance",
+      description: "Provides immediate aid in the form of food, water, and basic necessities to individuals and families affected by natural disasters or emergencies.",
+      link: "/relief-assistance",
+      cover: images.burialProfile,
     },
   ];
   return (
@@ -47,7 +49,7 @@ const Home = () => {
           </Pressable>
         </View>
 
-        <View className="w-full h-[120px] bg-primary rounded-xl justify-center items-center">
+        <View className="w-full h-[122px] rounded-xl justify-center items-center overflow-hidden">
           <LinearGradient
             colors={["#0F71F1", "#253D6A"]}
             start={{ x: 0.5, y: -0.9 }}

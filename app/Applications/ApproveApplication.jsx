@@ -65,7 +65,7 @@ const ApproveApplication = ({}) => {
         <FilePreview
           status={status}
           uri={
-            "https://imgv2-2-f.scribdassets.com/img/document/426522326/original/512af8de0a/1?v=1"
+            "https://www.lamudi.com.ph/journal/wp-content/uploads/2023/02/1024px-UMID_EMV_sample-1024x655.jpg"
           }
         />
       </View>
