@@ -8,6 +8,7 @@ import {
   useWindowDimensions,
   Alert,
 } from "react-native";
+import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DocumentPickerField from "../../components/DocumentPicker";
 import TextField from "../../components/TextField";
@@ -264,6 +265,7 @@ const ApplicationForm = () => {
                     "Submitted",
                     "Your application has been submitted.",
                   );
+                  router.push("/myApplication");
                 }
                 : handleNext
             }

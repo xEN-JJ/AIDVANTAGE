@@ -65,7 +65,7 @@ const ApproveApplication = ({}) => {
         <FilePreview
           status={status}
           uri={
-            "https://external-preview.redd.it/lana-del-rey-shares-artwork-from-upcoming-single-henry-come-v0-olfm3_9kKLAlzQd3HpNRFDH0ZmJhuuTP_Sh3EpvEN_Q.jpg?auto=webp&s=3b02835f0928e3c3ce1fd31594bdbaf321c0a935"
+            "https://www.lamudi.com.ph/journal/wp-content/uploads/2023/02/1024px-UMID_EMV_sample-1024x655.jpg"
           }
         />
       </View>
