@@ -121,8 +121,17 @@ const ApplicationForm = () => {
             style={{ width }}
             className="flex-1 justify-center items-center mx-7 gap-2"
           >
-            <Dropdown />
-            {/* { key: "type", label: "Type of Assistance" }, */}
+            <Dropdown
+              onValueChange={(value) => handleChange("typeOfAssistance", value)}
+              selectedValue={formData["typeOfAssistance"] || ""}
+              label="Nature of Assistance"
+              prompt={"Nature of Assistance"}
+              options={[
+                { label: "Hospital Bill Assistance", value: "hospital" },
+                { label: "Medicine Assistance", value: "medicine" },
+                { label: "Laboratory Fee Assistance", value: "laboratory" },
+              ]}
+            />
             {[
               { key: "firstName", label: "First Name" },
               { key: "lastName", label: "Last Name" },
@@ -137,6 +146,7 @@ const ApplicationForm = () => {
               />
             ))}
             {/* { key: "birthDate", label: "Birth Date (MM/DD/YYYY)" }, */}
+
             <RadioButtons
               options={[
                 { label: "Male", value: "Male" },
@@ -156,6 +166,7 @@ const ApplicationForm = () => {
                 { label: "Single", value: "single" },
                 { label: "Married", value: "married" },
                 { label: "Widowed", value: "widowed" },
+                { label: "Separated/Divorce", value: "divorce" },
               ]}
             />
 
@@ -173,7 +184,10 @@ const ApplicationForm = () => {
           </View>
 
           {/* Step 2: Family Composition */}
-          <View style={{ width }} className="w-full items-center mt-5 h-[30%]">
+          <View
+            style={{ width }}
+            className="w-full items-center mt-5 h-[30%] px-7"
+          >
             <View className="w-full items-center =">
               {household.map((member, index) => (
                 <View
@@ -213,7 +227,7 @@ const ApplicationForm = () => {
         </Animated.View>
 
         {/* Buttons */}
-        <View className="w-full max-w-md mt-6 mb-10 items-center gap-3">
+        <View className="w-full max-w-md mt-6 mb-10 items-center gap-3 px-7">
           {step > 0 && (
             <ButtonOutlined
               className="border border-blue-700 py-3 rounded-md mb-3"
