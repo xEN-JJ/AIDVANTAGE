@@ -14,8 +14,8 @@ import TextField from "../../components/TextField";
 import ProgressBar from "../../components/ProgressBar";
 import ButtonOutlined from "../../components/ButtonOutline";
 import ButtonFilled from "../../components/ButtonFilled";
-import Dropdown from "../../components/Dropdown";
 import RadioButtons from "../../components/RadioButtons";
+import CustomDropDownPicker from "../../components/DropDownPicker";
 
 const ApplicationForm = () => {
   const { width } = useWindowDimensions();
@@ -26,13 +26,27 @@ const ApplicationForm = () => {
   const [household, setHousehold] = useState([]);
   const [uploadedDocs, setUploadedDocs] = useState({});
 
+  const [typeOfAssistance, setTypeOfAssistance] = useState(null);
+  const [typeOfAssistanceItems, setTypeOfAssistanceItems] = useState([
+    { label: "Medical Assistance", value: "medical" },
+    { label: "Educational Assistance", value: "educational" },
+    { label: "Burial Assistance", value: "burial" },
+    { label: "Relief Assistance", value: "relief" },
+  ]);
+
+  const [civilStatus, setCivilStatus] = useState(null);
+  const [civilStatusItems, setCivilStatusItems] = useState([
+    { label: "Single", value: "single" },
+    { label: "Married", value: "married" },
+    { label: "Separated", value: "separated" },
+    { label: "Divorced", value: "divorced" },
+    { label: "Widowed", value: "widowed" },
+  ]);
+
   const documents = [
-    { key: "deathCert", title: "Relative’s Death Cert." },
-    { key: "oscaId", title: "OSCA ID (if Senior Citizen)" },
-    { key: "pwdId", title: "PWD ID (if PWD)" },
-    { key: "soloParentId", title: "Solo Parent ID (if Solo Parent)" },
-    { key: "funeralContract", title: "Original Funeral Contract" },
-    { key: "affidavit", title: "Affidavit of Residency (if Resident of Naga)" },
+    { key: "validID", title: "Valid ID" },
+    { key: "medAbs", title: "Medical Abstract / Doctor's Certifcate" },
+    { key: "hispitalBill", title: "Final Hospital Bill" },
   ];
 
   const handleChange = (key, value) => {
@@ -121,17 +135,24 @@ const ApplicationForm = () => {
             style={{ width }}
             className="flex-1 justify-center items-center mx-7 gap-2"
           >
-            <Dropdown
-              onValueChange={(value) => handleChange("typeOfAssistance", value)}
-              selectedValue={formData["typeOfAssistance"] || ""}
-              label="Nature of Assistance"
-              prompt={"Nature of Assistance"}
-              options={[
-                { label: "Hospital Bill Assistance", value: "hospital" },
-                { label: "Medicine Assistance", value: "medicine" },
-                { label: "Laboratory Fee Assistance", value: "laboratory" },
-              ]}
+            <CustomDropDownPicker
+              value={typeOfAssistance}
+              setValue={setTypeOfAssistance}
+              S
+              items={typeOfAssistanceItems}
+              setItems={setTypeOfAssistanceItems}
+              placeholder="Type of Assistance"
+              listMode="SCROLLVIEW"
+              style={{
+                borderColor: "#787575", // grey border
+                marginBottom: 16,
+              }}
+              dropDownContainerStyle={{
+                borderColor: "#787575",
+              }}
+              zIndex={2000}
             />
+
             {[
               { key: "firstName", label: "First Name" },
               { key: "lastName", label: "Last Name" },
@@ -157,17 +178,21 @@ const ApplicationForm = () => {
               onChange={(value) => handleChange("gender", value)}
             />
 
-            <Dropdown
-              onValueChange={(value) => handleChange("civilStatus", value)}
-              selectedValue={formData["civilStatus"] || ""}
-              label="Civil Status"
-              prompt={"Civil Status"}
-              options={[
-                { label: "Single", value: "single" },
-                { label: "Married", value: "married" },
-                { label: "Widowed", value: "widowed" },
-                { label: "Separated/Divorce", value: "divorce" },
-              ]}
+            <CustomDropDownPicker
+              value={civilStatus}
+              setValue={setCivilStatus}
+              items={civilStatusItems}
+              setItems={setCivilStatusItems}
+              placeholder="Civil Status"
+              listMode="SCROLLVIEW"
+              style={{
+                borderColor: "#000", // black border
+                marginBottom: 16,
+              }}
+              dropDownContainerStyle={{
+                borderColor: "#000",
+              }}
+              zIndex={1000}
             />
 
             {[
@@ -227,7 +252,7 @@ const ApplicationForm = () => {
         </Animated.View>
 
         {/* Buttons */}
-        <View className="w-full max-w-md mt-6 mb-10 items-center gap-3 px-7">
+        <View className="mt-6 mb-10 items-center gap-3 px-7">
           {step > 0 && (
             <ButtonOutlined
               className="border border-blue-700 py-3 rounded-md mb-3"

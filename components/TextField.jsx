@@ -88,10 +88,12 @@ const TextField = ({
       </Animated.View>
 
       <TextInput
-        className={`rounded-md text-[#787575] font-rregular h-[60px] w-full px-5 ${isError
+        className={`rounded-md text-[#787575] font-rregular h-[60px] w-full px-5 ${
+          isError
             ? "border-red-500 border-2"
             : "border border-[#787575] focus:border-blue-500 focus:border-2"
-          }`}
+        }`}
+        style={{ flexShrink: 1, width: "100%" }}
         key={fieldKey}
         secureTextEntry={secureTextEntry}
         onFocus={handleFocus}

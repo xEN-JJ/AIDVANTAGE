@@ -6,7 +6,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import TextField from "../../components/TextField";
 import AssistanceCard from "../../components/AssistanceCard";
 import { images } from "../../constants";
-import { LinearGradient } from 'expo-linear-gradient';
+import { LinearGradient } from "expo-linear-gradient";
 
 const Home = () => {
   const assistance = [
@@ -14,7 +14,7 @@ const Home = () => {
       title: "Medical Assistance",
       description:
         "Provides financial support for individuals and families in crisis who need assistance with medical expenses.",
-      link: "/medical-assistance",
+      link: "/medicalAssistance",
       cover: images.medicalCover,
     },
     {
@@ -24,7 +24,8 @@ const Home = () => {
     },
     {
       title: "Burial Assistance",
-      description: "Provides financial support to families in crisis to help cover funeral and burial expenses for a deceased loved one.",
+      description:
+        "Provides financial support to families in crisis to help cover funeral and burial expenses for a deceased loved one.",
       link: "/burial-assistance",
       cover: images.burialProfile,
     },
@@ -46,12 +47,17 @@ const Home = () => {
           </Pressable>
         </View>
 
-        <View className="w-full h-[120px] rounded-xl justify-center items-center overflow-hidden">
+        <View className="w-full h-[120px] bg-primary rounded-xl justify-center items-center">
           <LinearGradient
-            colors={['#2563eb', '#1e40af']}
-            start={{ x: 0, y: 0 }}
+            colors={["#0F71F1", "#253D6A"]}
+            start={{ x: 0.5, y: -0.9 }}
             end={{ x: 1, y: 0 }}
-            style={{ position: 'absolute', width: '100%', height: '100%' }}
+            style={{
+              position: 'absolute',
+              width: "100%",
+              height: "100%",
+              borderRadius: "0.75rem,
+            }}
           />
           <Image
             source={images.logoWhite}

@@ -55,7 +55,7 @@ const PendingApplication = ({}) => {
         <FilePreview
           status={status}
           uri={
-            "https://external-preview.redd.it/lana-del-rey-shares-artwork-from-upcoming-single-henry-come-v0-olfm3_9kKLAlzQd3HpNRFDH0ZmJhuuTP_Sh3EpvEN_Q.jpg?auto=webp&s=3b02835f0928e3c3ce1fd31594bdbaf321c0a935"
+            "https://imgv2-2-f.scribdassets.com/img/document/426522326/original/512af8de0a/1?v=1"
           }
         />
       </View>
