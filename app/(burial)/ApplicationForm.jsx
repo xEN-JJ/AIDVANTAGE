@@ -8,6 +8,7 @@ import {
   useWindowDimensions,
   Alert,
 } from "react-native";
+import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DocumentPickerField from "../../components/DocumentPicker";
 import TextField from "../../components/TextField";
@@ -15,7 +16,7 @@ import ProgressBar from "../../components/ProgressBar";
 import ButtonOutlined from "../../components/ButtonOutline";
 import ButtonFilled from "../../components/ButtonFilled";
 import RadioButtons from "../../components/RadioButtons";
-import AssistanceDropDown from "../../components/Dropdown";
+import DropDown from "../../components/Dropdown";
 
 const ApplicationForm = () => {
   const { width } = useWindowDimensions();
@@ -137,7 +138,7 @@ const ApplicationForm = () => {
             style={{ width }}
             className="flex-1 justify-center items-center mx-7"
           >
-            <AssistanceDropDown
+            <DropDown
               value={typeOfAssistance}
               setValue={setTypeOfAssistance} S
               items={typeOfAssistanceItems}
@@ -176,7 +177,7 @@ const ApplicationForm = () => {
               checkedValue={formData["gender"]}
               onChange={(value) => handleChange("gender", value)}
             />
-            <AssistanceDropDown
+            <DropDown
               value={civilStatus}
               setValue={setCivilStatus}
               items={civilStatusItems}
@@ -184,7 +185,7 @@ const ApplicationForm = () => {
               placeholder="Civil Status"
               listMode="SCROLLVIEW"
               style={{
-                borderColor: "#000", // black border
+                borderColor: "#000",
                 marginBottom: 16,
               }}
               dropDownContainerStyle={{
@@ -206,7 +207,7 @@ const ApplicationForm = () => {
           </View>
 
           {/* Step 2: Family Composition */}
-          <View style={{ width }} className="w-full items-center mt-5">
+          <View style={{ width }} className="w-full px-7 items-center mt-5">
             <View className="w-full items-center">
               {household.map((member, index) => (
                 <View
@@ -246,7 +247,7 @@ const ApplicationForm = () => {
         </Animated.View>
 
         {/* Buttons */}
-        <View className="w-full max-w-md mt-6 mb-10 items-center gap-3">
+        <View className="w-full px-7 mt-6 mb-10 items-center gap-3">
           {step > 0 && (
             <ButtonOutlined
               className="border border-blue-700 py-3 rounded-md mb-3"
@@ -264,6 +265,7 @@ const ApplicationForm = () => {
                     "Submitted",
                     "Your application has been submitted.",
                   );
+                  router.push("/myApplication");
                 }
                 : handleNext
             }
