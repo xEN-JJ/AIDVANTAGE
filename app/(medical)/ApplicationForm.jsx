@@ -20,7 +20,7 @@ import ButtonFilled from "../../components/ButtonFilled";
 import Dropdown from "../../components/Dropdown";
 import RadioButtons from "../../components/RadioButtons";
 
-const ApplyForm = () => {
+const ApplicationForm = () => {
   const { width } = useWindowDimensions();
   const translateX = useRef(new Animated.Value(0)).current;
 
@@ -37,39 +37,6 @@ const ApplyForm = () => {
     { key: "funeralContract", title: "Original Funeral Contract" },
     { key: "affidavit", title: "Affidavit of Residency (if Resident of Naga)" },
   ];
-}
-
-const ApplicationForm = () => {
-  const { width } = useWindowDimensions();
-
-  const steps = [
-    [
-      { key: "firstName", placeholder: "First Name" },
-      { key: "lastName", placeholder: "Last Name" },
-      { key: "username", placeholder: "Username" },
-      { key: "phone", placeholder: "Phone Number" },
-      { key: "email", placeholder: "Email" },
-      { key: "password", placeholder: "Password", secure: true },
-      { key: "confirmPassword", placeholder: "Confirm Password", secure: true },
-      { key: "dob", placeholder: "Date of Birth" },
-      { key: "country", placeholder: "Country" },
-      { key: "city", placeholder: "City" },
-    ],
-    [
-      { key: "email", placeholder: "Email" },
-      { key: "password", placeholder: "Password", secure: true },
-      { key: "confirmPassword", placeholder: "Confirm Password", secure: true },
-      { key: "dob", placeholder: "Date of Birth" },
-    ],
-    [
-      { key: "country", placeholder: "Country", document: "true" },
-      { key: "city", placeholder: "City" },
-    ],
-  ];
-
-  const [step, setStep] = useState(0);
-  const [formData, setFormData] = useState({});
-  const translateX = useRef(new Animated.Value(0)).current;
 
   const handleChange = (key, value) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
@@ -109,8 +76,8 @@ const ApplicationForm = () => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <SafeAreaView className="flex-1 bg-white mb-10">
+      <ScrollView showsVerticalScrollIndicator={false} className="">
         {/* indicator */}
         <View className="flex-row items-center justify-center mt-2 mb-2 w-full ">
           <Text className="text-3xl text-blue-700 font-bold ">
@@ -259,7 +226,6 @@ const ApplicationForm = () => {
           )}
           <ButtonFilled
             title={step === 2 ? "Submit" : "Next"}
-            p
             onClick={
               step === 2
                 ? () => {
