@@ -3,12 +3,9 @@ import {
   View,
   Text,
   ScrollView,
-  TextInput,
   TouchableOpacity,
   Animated,
   useWindowDimensions,
-  KeyboardAvoidingView,
-  Platform,
   Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -17,8 +14,8 @@ import TextField from "../../components/TextField";
 import ProgressBar from "../../components/ProgressBar";
 import ButtonOutlined from "../../components/ButtonOutline";
 import ButtonFilled from "../../components/ButtonFilled";
-import Dropdown from "../../components/Dropdown";
 import RadioButtons from "../../components/RadioButtons";
+import DropDown from "../../components/DropDownPicker";
 
 const ApplicationForm = () => {
   const { width } = useWindowDimensions();
@@ -29,11 +26,30 @@ const ApplicationForm = () => {
   const [household, setHousehold] = useState([]);
   const [uploadedDocs, setUploadedDocs] = useState({});
 
+  const [typeOfAssistance, setTypeOfAssistance] = useState(null);
+  const [typeOfAssistanceItems, setTypeOfAssistanceItems] = useState([
+    { label: "Medical Assistance", value: "medical" },
+    { label: "Educational Assistance", value: "educational" },
+    { label: "Burial Assistance", value: "burial" },
+    { label: "Relief Assistance", value: "relief" },
+  ]);
+
+  const [civilStatus, setCivilStatus] = useState(null);
+  const [civilStatusItems, setCivilStatusItems] = useState([
+    { label: "Single", value: "single" },
+    { label: "Married", value: "married" },
+    { label: "Separated", value: "separated" },
+    { label: "Divorced", value: "divorced" },
+    { label: "Widowed", value: "widowed" },
+  ]);
+
   const documents = [
-    { key: "certIng", title: "Certificate of Indigency" },
-    { key: "studentId", title: "Student ID" },
-    { key: "poadId", title: "Statement of Account" },
-    { key: "validId", title: "Valid ID (Voters/Certification)" },
+    { key: "RDC", title: "Relative's Death Certificate" },
+    { key: "oscaID", title: "OSCA ID" },
+    { key: "pwdID", title: "PWD ID" },
+    { key: "Solo Parent ID", title: "Solo Parent ID" },
+    { key: "OFC", title: "Original Funeral Contract" },
+    { key: "AoF", title: "Affidavit of Residency" },
   ];
 
   const handleChange = (key, value) => {
@@ -121,8 +137,22 @@ const ApplicationForm = () => {
             style={{ width }}
             className="flex-1 justify-center items-center mx-7"
           >
-            <Dropdown />
-            {/* { key: "type", label: "Type of Assistance" }, */}
+            <DropDown
+              value={typeOfAssistance}
+              setValue={setTypeOfAssistance} S
+              items={typeOfAssistanceItems}
+              setItems={setTypeOfAssistanceItems}
+              placeholder="Type of Assistance"
+              listMode="SCROLLVIEW"
+              style={{
+                borderColor: "#787575", // grey border
+                marginBottom: 16,
+              }}
+              dropDownContainerStyle={{
+                borderColor: "#787575",
+              }}
+              zIndex={2000}
+            />
             {[
               { key: "firstName", label: "First Name" },
               { key: "lastName", label: "Last Name" },
@@ -146,19 +176,22 @@ const ApplicationForm = () => {
               checkedValue={formData["gender"]}
               onChange={(value) => handleChange("gender", value)}
             />
-
-            <Dropdown
-              onValueChange={(value) => handleChange("civilStatus", value)}
-              selectedValue={formData["civilStatus"] || ""}
-              label="Civil Status"
-              prompt={"Civil Status"}
-              options={[
-                { label: "Single", value: "single" },
-                { label: "Married", value: "married" },
-                { label: "Widowed", value: "widowed" },
-              ]}
+            <DropDown
+              value={civilStatus}
+              setValue={setCivilStatus}
+              items={civilStatusItems}
+              setItems={setCivilStatusItems}
+              placeholder="Civil Status"
+              listMode="SCROLLVIEW"
+              style={{
+                borderColor: "#000",
+                marginBottom: 16,
+              }}
+              dropDownContainerStyle={{
+                borderColor: "#000",
+              }}
+              zIndex={1000}
             />
-
             {[
               { key: "address", label: "Address" },
               { key: "occupation", label: "Occupation" },
@@ -173,7 +206,7 @@ const ApplicationForm = () => {
           </View>
 
           {/* Step 2: Family Composition */}
-          <View style={{ width }} className="w-full items-center mt-5">
+          <View style={{ width }} className="w-full px-7 items-center mt-5">
             <View className="w-full items-center">
               {household.map((member, index) => (
                 <View
@@ -205,6 +238,7 @@ const ApplicationForm = () => {
                   key={doc.key}
                   title={doc.title}
                   onUpload={() => handleDocumentUpload(doc.key)}
+                  label={doc.title}
                 />
               ))}
             </View>
@@ -212,7 +246,7 @@ const ApplicationForm = () => {
         </Animated.View>
 
         {/* Buttons */}
-        <View className="w-full max-w-md mt-6 mb-10 items-center gap-3">
+        <View className="w-full px-7 mt-6 mb-10 items-center gap-3">
           {step > 0 && (
             <ButtonOutlined
               className="border border-blue-700 py-3 rounded-md mb-3"

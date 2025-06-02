@@ -22,17 +22,17 @@ const ApproveApplication = ({}) => {
         </Text>
         <Text className="">
           Nature of Assistance:{"  "}
-          <Text className="font-rbold mx-3">Medical Assistance</Text>
+          <Text className="font-rbold mx-3">Cremation Cost</Text>
         </Text>
 
         <Text className="">
           Date of Submission:{"  "}
-          <Text className="font-rbold mx-3">Medical Assistance</Text>
+          <Text className="font-rbold mx-3">November 05, 2024</Text>
         </Text>
 
         <Text className="">
           Date Approved:{"  "}
-          <Text className="font-rbold mx-3">Medical Assistance</Text>
+          <Text className="font-rbold mx-3">November 11, 2024</Text>
         </Text>
 
         <Text className="">
