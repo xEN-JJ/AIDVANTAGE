@@ -42,7 +42,7 @@ const FilePreview = ({ status, uri }) => {
         <Text
           className={`font-rbold ${status === "pending" ? "text-black" : "text-white"}`}
         >
-          Hospital Bill
+          Valid ID
         </Text>
       </View>
 

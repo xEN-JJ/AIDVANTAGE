@@ -69,11 +69,20 @@ const MedicalAssistance = () => {
         <View className="mx-5 gap-3 my-3">
           <ExpansionPanel
             title="Eligibility"
-            description={`• Must be a resident of Naga City\n• Enrolled in any educational institution\n• From indigent or marginalized families\n• With good academic standing\n• Must not be receiving similar assistance from other programs`}
+            description={`• Must be a resident of Naga City
+                        \n• Enrolled in any educational institution
+                        \n• From indigent or marginalized families
+                        \n• With good academic standing
+                        \n• Must not be receiving similar assistance from other programs`}
           />
           <ExpansionPanel
             title="Requirements"
-            description={`• Complete application form\n• Valid identification documents\n• Hospital Bill/ Laboratory Request/ Prescription\n• Barangay certification of residency and indigency\n• Medical certification`}
+            description={`• Job Order Certificate from the Mayor’s Office (official referral).
+                        \n• Death Certificate of the deceased (photocopy or original).
+                        \n• Valid Government-issued ID of the applicant.
+                        \n• Barangay Certification or Indigency Certificate indicating financial status.
+                        \n• Proof of Relationship to the deceased (e.g., birth certificate, marriage certificate).
+                        \n• Funeral Contract or Quotation from the funeral service provider.`}
           />
         </View>
 

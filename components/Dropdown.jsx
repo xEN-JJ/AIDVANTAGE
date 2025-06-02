@@ -1,21 +1,29 @@
-import { View, Text } from "react-native";
-import { useState } from "react";
-import { Picker } from "@react-native-picker/picker";
+import React, { useState } from 'react';
+import DropDownPicker from 'react-native-dropdown-picker';
 
-const Dropdown = (pickerTitle) => {
-  const [selectedItem, setSelectedItem] = useState();
+const DropDown = ({
+  value,
+  setValue,
+  items,
+  setItems,
+  placeholder: propPlaceHolder,
+  ...rest
+}) => {
+  const [open, setOpen] = useState(false);
 
   return (
-    <View className="border border-[#787575] rounded-lg w-full">
-      <Picker
-        selectedValue={selectedItem}
-        onValueChange={(itemValue, itemIndex) => setSelectedItem(itemValue)}
-      >
-        <Picker.Item label="Java" value="java" />
-        {/* map out the picker */}
-      </Picker>
-    </View>
+    <DropDownPicker
+      open={open}
+      value={value}
+      items={items}
+      setOpen={setOpen}
+      setValue={setValue}
+      setItems={setItems}
+      listMode="SCROLLVIEW"
+      placeholder={propPlaceHolder}
+      {...rest}
+    />
   );
 };
 
-export default Dropdown;
+export default DropDown;

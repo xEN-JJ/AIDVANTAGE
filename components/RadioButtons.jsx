@@ -2,12 +2,12 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React, { useMemo, useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import RadioGroup from "react-native-radio-buttons-group";
-
-const RadioButtons = ({ options, checkedValue, onChange, style }) => {
+const RadioButtons = ({ label, options, checkedValue, onChange, style }) => {
   return (
-    <View className=" w-[22rem]  rounded-lg border border-gray-400">
-      <Text className="my-2 mx-3">Label</Text>
+    <View className=" w-[22rem]  rounded-lg ">
+      <Text className="my-1 mx-3 text-lg font-rmedium text-primary">
+        {label}
+      </Text>
       {options.map((option) => {
         let active = checkedValue == option.value;
         return (

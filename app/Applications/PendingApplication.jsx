@@ -22,12 +22,12 @@ const PendingApplication = ({}) => {
         </Text>
         <Text className="">
           Nature of Assistance:{"  "}
-          <Text className="font-rbold mx-3">Medical Assistance</Text>
+          <Text className="font-rbold mx-3">Relief Assistance</Text>
         </Text>
 
         <Text className="">
           Date of Submission:{"  "}
-          <Text className="font-rbold mx-3">Medical Assistance</Text>
+          <Text className="font-rbold mx-3">09-04-24</Text>
         </Text>
 
         <Text className="">
@@ -55,7 +55,7 @@ const PendingApplication = ({}) => {
         <FilePreview
           status={status}
           uri={
-            "https://external-preview.redd.it/lana-del-rey-shares-artwork-from-upcoming-single-henry-come-v0-olfm3_9kKLAlzQd3HpNRFDH0ZmJhuuTP_Sh3EpvEN_Q.jpg?auto=webp&s=3b02835f0928e3c3ce1fd31594bdbaf321c0a935"
+            "https://idcard.ph/wp-content/uploads/2022/08/C71D52C9-29DC-4336-9C3A-701877EFFB48.jpeg"
           }
         />
       </View>

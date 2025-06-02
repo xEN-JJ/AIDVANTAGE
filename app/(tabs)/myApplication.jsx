@@ -10,19 +10,19 @@ const MyApplications = () => {
   const applications = [
     {
       applicationId: 1,
-      typeOfAssistance: "Medical Assistance",
+      typeOfAssistance: "Relief Assistance",
       dateOfApplication: "02/18/2004",
       status: "pending",
     },
     {
       applicationId: 1,
-      typeOfAssistance: "Medical Assistance",
+      typeOfAssistance: "Relief Assistance",
       dateOfApplication: "02/18/2004",
       status: "declined",
     },
     {
       applicationId: 1,
-      typeOfAssistance: "Medical Assistance",
+      typeOfAssistance: "Relief Assistance",
       dateOfApplication: "02/18/2004",
       status: "approved",
     },

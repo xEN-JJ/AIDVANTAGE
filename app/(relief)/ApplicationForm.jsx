@@ -8,6 +8,7 @@ import {
   useWindowDimensions,
   Alert,
 } from "react-native";
+import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DocumentPickerField from "../../components/DocumentPicker";
 import TextField from "../../components/TextField";
@@ -15,7 +16,7 @@ import ProgressBar from "../../components/ProgressBar";
 import ButtonOutlined from "../../components/ButtonOutline";
 import ButtonFilled from "../../components/ButtonFilled";
 import RadioButtons from "../../components/RadioButtons";
-import AssistanceDropDown from "../../components/Dropdown";
+import DropDown from "../../components/Dropdown";
 
 const ApplicationForm = () => {
   const { width } = useWindowDimensions();
@@ -44,12 +45,8 @@ const ApplicationForm = () => {
   ]);
 
   const documents = [
-    { key: "RDC", title: "Relative's Death Certificate" },
-    { key: "oscaID", title: "OSCA ID" },
-    { key: "pwdID", title: "PWD ID" },
-    { key: "Solo Parent ID", title: "Solo Parent ID" },
-    { key: "OFC", title: "Original Funeral Contract" },
-    { key: "AoF", title: "Affidavit of Residency" },
+    { key: "validID", title: "Valid ID" }
+   
   ];
 
   const handleChange = (key, value) => {
@@ -90,8 +87,8 @@ const ApplicationForm = () => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <SafeAreaView className="flex-1 bg-white mb-10">
+      <ScrollView showsVerticalScrollIndicator={false} className="">
         {/* indicator */}
         <View className="flex-row items-center justify-center mt-2 mb-2 w-full ">
           <Text className="text-3xl text-blue-700 font-bold ">
@@ -131,15 +128,17 @@ const ApplicationForm = () => {
             flexDirection: "row",
             transform: [{ translateX }],
           }}
+          className={"mt-2"}
         >
           {/* Step 1: Personal Info */}
           <View
             style={{ width }}
-            className="flex-1 justify-center items-center mx-7"
+            className="flex-1 justify-center items-center mx-7 gap-2"
           >
-            <AssistanceDropDown
+            <DropDown
               value={typeOfAssistance}
-              setValue={setTypeOfAssistance} S
+              setValue={setTypeOfAssistance}
+              S
               items={typeOfAssistanceItems}
               setItems={setTypeOfAssistanceItems}
               placeholder="Type of Assistance"
@@ -153,6 +152,7 @@ const ApplicationForm = () => {
               }}
               zIndex={2000}
             />
+
             {[
               { key: "firstName", label: "First Name" },
               { key: "lastName", label: "Last Name" },
@@ -167,6 +167,7 @@ const ApplicationForm = () => {
               />
             ))}
             {/* { key: "birthDate", label: "Birth Date (MM/DD/YYYY)" }, */}
+
             <RadioButtons
               options={[
                 { label: "Male", value: "Male" },
@@ -176,7 +177,8 @@ const ApplicationForm = () => {
               checkedValue={formData["gender"]}
               onChange={(value) => handleChange("gender", value)}
             />
-            <AssistanceDropDown
+
+            <DropDown
               value={civilStatus}
               setValue={setCivilStatus}
               items={civilStatusItems}
@@ -192,6 +194,7 @@ const ApplicationForm = () => {
               }}
               zIndex={1000}
             />
+
             {[
               { key: "address", label: "Address" },
               { key: "occupation", label: "Occupation" },
@@ -206,8 +209,11 @@ const ApplicationForm = () => {
           </View>
 
           {/* Step 2: Family Composition */}
-          <View style={{ width }} className="w-full items-center mt-5">
-            <View className="w-full items-center">
+          <View
+            style={{ width }}
+            className="w-full items-center mt-5 h-[30%] px-7"
+          >
+            <View className="w-full items-center =">
               {household.map((member, index) => (
                 <View
                   key={index}
@@ -217,7 +223,7 @@ const ApplicationForm = () => {
                   <TouchableOpacity
                     onPress={() => removeHouseholdMember(index)}
                   >
-                    <Text className="text-red-500">🗑 Remove</Text>
+                    <Text className="text-red-500"> Remove</Text>
                   </TouchableOpacity>
                 </View>
               ))}
@@ -246,7 +252,7 @@ const ApplicationForm = () => {
         </Animated.View>
 
         {/* Buttons */}
-        <View className="w-full max-w-md mt-6 mb-10 items-center gap-3">
+        <View className="mt-6 mb-10 items-center gap-3 px-7">
           {step > 0 && (
             <ButtonOutlined
               className="border border-blue-700 py-3 rounded-md mb-3"
@@ -259,12 +265,13 @@ const ApplicationForm = () => {
             onClick={
               step === 2
                 ? () => {
-                  console.log({ formData, household, uploadedDocs });
-                  Alert.alert(
-                    "Submitted",
-                    "Your application has been submitted.",
-                  );
-                }
+                    console.log({ formData, household, uploadedDocs });
+                    Alert.alert(
+                      "Submitted",
+                      "Your application has been submitted."
+                    );
+                    router.push("/myApplication");
+                  }
                 : handleNext
             }
           />
@@ -273,4 +280,5 @@ const ApplicationForm = () => {
     </SafeAreaView>
   );
 };
+
 export default ApplicationForm;

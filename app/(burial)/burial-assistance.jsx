@@ -83,11 +83,20 @@ const BurialAssistance = () => {
         <View className="mx-5 gap-3">
           <ExpansionPanel
             title="Eligibility"
-            description={`• Must be a resident of Naga City\n• Enrolled in any educational institution\n• From indigent or marginalized families\n• With good academic standing\n• Must not be receiving similar assistance from other programs`}
+            description={`• The applicant must be a resident of Naga City.
+                        \n• The deceased must be a direct family member (e.g., parent, child, spouse, or immediate dependent) of the applicant.
+                        \n• From indigent or marginalized families.
+                        \n• The applicant must secure a Job Order Certificate from the Mayor’s Office as an official referral to the CSWDO.
+                        \n• The applicant must not have received any Assistance within the past three (3) months from the CSWDO.`}
           />
           <ExpansionPanel
             title="Requirements"
-            description={`• Complete application form\n• Valid identification documents\n• Proof of enrollment or school certification\n• Academic records or report cards\n• Barangay certification of residency and indigency\n• Letter of request addressed to CSWDO Director`}
+            description={`• Job Order Certificate from the Mayor’s Office (official referral).
+                        \n• Death Certificate of the deceased (photocopy or original).
+                        \n• Valid Government-issued ID of the applicant.
+                        \n• Barangay Certification or Indigency Certificate indicating financial status.
+                        \n• Proof of Relationship to the deceased (e.g., birth certificate, marriage certificate).
+                        \n• Funeral Contract or Quotation from the funeral service provider.`}
           />
         </View>
 

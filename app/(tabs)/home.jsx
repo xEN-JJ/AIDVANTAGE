@@ -6,6 +6,8 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import TextField from "../../components/TextField";
 import AssistanceCard from "../../components/AssistanceCard";
 import { images } from "../../constants";
+import { Image } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const Home = () => {
   const assistance = [
@@ -18,19 +20,22 @@ const Home = () => {
     },
     {
       title: "Educational Assistance",
-      description: "Lorem",
+      description: "Provides support such as financial aid and resources to help students succeed.",
       link: "/educational-assistance",
+      cover: images.educationalCover,
     },
     {
       title: "Burial Assistance",
-      description: "Lorem",
+      description: "Provides financial support to families in crisis to help cover funeral and burial expenses for a deceased loved one.",
       link: "/burial-assistance",
       cover: images.burialProfile,
     },
     {
       title: "Relief Assistance",
-      description: "Lorem",
-      link: "/medical-assistance",
+      description:
+        "Provides immediate aid in the form of food, water, and basic necessities to individuals and families affected by natural disasters or emergencies.",
+      link: "/relief-assistance",
+      cover: images.reliefCover,
     },
   ];
   return (
@@ -44,8 +49,19 @@ const Home = () => {
             <MaterialIcons name="tune" size={32} color="black" />
           </Pressable>
         </View>
-
-        <View className="w-full h-[120px] bg-primary rounded-xl"></View>
+        <View className="w-full h-[125px] bg-primary rounded-xl justify-center items-center">
+          <LinearGradient
+            colors={["#2563eb", "#1e40af"]} // Replace with your primary gradient colors
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={{ position: "absolute", width: "100%", height: "100%" }}
+          />
+          <Image
+            source={images.logoWhite}
+            style={{ height: 120, width: "80%" }}
+            resizeMode="contain"
+          />
+        </View>
 
         <View>
           <Text className="text-3xl font-rbold mt-10 text-blue-500">
