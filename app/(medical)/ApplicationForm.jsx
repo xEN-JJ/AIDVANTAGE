@@ -230,7 +230,7 @@ const ApplicationForm = () => {
         </Animated.View>
 
         {/* Buttons */}
-        <View className="w-full max-w-md mt-6 mb-10 items-center gap-3 px-7">
+        <View className="mt-6 mb-10 items-center gap-3 px-7">
           {step > 0 && (
             <ButtonOutlined
               className="border border-blue-700 py-3 rounded-md mb-3"

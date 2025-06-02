@@ -13,7 +13,7 @@ const Home = () => {
       title: "Medical Assistance",
       description:
         "Provides financial support for individuals and families in crisis who need assistance with medical expenses.",
-      link: "/medical-assistance",
+      link: "/medicalAssistance",
       cover: images.medicalCover,
     },
     {
