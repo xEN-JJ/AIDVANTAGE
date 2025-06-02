@@ -4,7 +4,6 @@ import TextField from "../../components/TextField";
 import { icons } from "../../constants";
 import ButtonFilled from "../../components/ButtonFilled";
 import { Link, router } from "expo-router";
-import ApplicationForm from "../(medical)/ApplicationForm";
 import ApplicationItems from "../../components/ApplicationItems";
 
 const MyApplications = () => {
@@ -37,41 +36,39 @@ const MyApplications = () => {
 
   return (
     <SafeAreaView className="mx-5">
-      <ScrollView>
-        <View className="mt-10">
-          <TextField title="Search" />
-          {icons["tune"]}
-        </View>
-        <View>
-          <ButtonFilled
-            title={"Apply"}
-            onClick={() => router.push("/ApplicationForm")}
-            prefixIcon={"pluscircle"}
-          />
-        </View>
+      <View className="mt-10">
+        <TextField title="Search" />
+        {icons["tune"]}
+      </View>
+      <View>
+        <ButtonFilled
+          title={"Apply"}
+          onClick={() => router.push("/ApplicationForm")}
+          prefixIcon={"pluscircle"}
+        />
+      </View>
 
-        <View>
-          <FlatList
-            data={applications}
-            renderItem={({ item }) => (
-              <ApplicationItems
-                assistance={item.typeOfAssistance}
-                dateOfApplication={item.dateOfApplication}
-                status={item.status}
-                onClick={() =>
-                  router.push({
-                    pathname: statusLink[item.status],
-                    params: {
-                      title: item.typeOfAssistance,
-                      status: item.status,
-                    },
-                  })
-                }
-              />
-            )}
-          />
-        </View>
-      </ScrollView>
+      <View>
+        <FlatList
+          data={applications}
+          renderItem={({ item }) => (
+            <ApplicationItems
+              assistance={item.typeOfAssistance}
+              dateOfApplication={item.dateOfApplication}
+              status={item.status}
+              onClick={() =>
+                router.push({
+                  pathname: statusLink[item.status],
+                  params: {
+                    title: item.typeOfAssistance,
+                    status: item.status,
+                  },
+                })
+              }
+            />
+          )}
+        />
+      </View>
     </SafeAreaView>
   );
 };

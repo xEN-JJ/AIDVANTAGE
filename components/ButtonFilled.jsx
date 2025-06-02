@@ -11,7 +11,7 @@ const ButtonFilled = ({
 }) => {
   return (
     <TouchableOpacity
-      className="flex flex-row items-center justify-center bg-primary w-full max-w-[15rem] h-[50px] rounded-full shadow-md"
+      className="flex flex-row items-center justify-center bg-primary w-full h-[50px] rounded-lg shadow-md"
       onPress={onClick}
       disabled={isDisable}
     >

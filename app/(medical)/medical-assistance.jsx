@@ -29,7 +29,7 @@ const MedicalAssistance = () => {
             families facing medical emergencies, chronic illnesses, or other
             healthcare-related needs.
           </Text>
-          <Text className="font-rsemibold text-2xl py-5 uppercase text-primary px-6">
+          <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             Objectives
           </Text>
 
@@ -47,7 +47,7 @@ const MedicalAssistance = () => {
             sectors within the community.
           </Text>
 
-          <Text className="font-rsemibold text-2xl py-5 uppercase text-primary px-6">
+          <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             Service offered
           </Text>
 
@@ -67,8 +67,14 @@ const MedicalAssistance = () => {
         </View>
 
         <View className="mx-5 gap-3 my-3">
-          <ExpansionPanel title="Eligibility" />
-          <ExpansionPanel title="Requirements" />
+          <ExpansionPanel
+            title="Eligibility"
+            description={`• Must be a resident of Naga City\n• Enrolled in any educational institution\n• From indigent or marginalized families\n• With good academic standing\n• Must not be receiving similar assistance from other programs`}
+          />
+          <ExpansionPanel
+            title="Requirements"
+            description={`• Complete application form\n• Valid identification documents\n• Hospital Bill/ Laboratory Request/ Prescription\n• Barangay certification of residency and indigency\n• Medical certification`}
+          />
         </View>
 
         <View className="w-full px-5 my-7 pb-10">
