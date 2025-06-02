@@ -69,11 +69,9 @@ const MedicalAssistance = () => {
         <View className="mx-5 gap-3 my-3">
           <ExpansionPanel
             title="Eligibility"
-            description={`• Must be a resident of Naga City
-                        \n• Enrolled in any educational institution
-                        \n• From indigent or marginalized families
-                        \n• With good academic standing
-                        \n• Must not be receiving similar assistance from other programs`}
+            description={`• Must be a resident of Naga City.
+                        \n• From indigent or marginalized families.
+                        \n• Must not be receiving similar assistance from other programs.`}
           />
           <ExpansionPanel
             title="Requirements"
