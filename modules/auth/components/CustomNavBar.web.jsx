@@ -8,8 +8,8 @@ export default function CustomNavBar() {
   const router = useRouter();
 
   return (
-    <View className="h-[5rem] bg-primary flex-row items-center">
-        <View className="w-full flex-row items-center justify-around">
+    <View className="h-[5rem] bg-primary flex-row items-center justify-center">
+        <View className="w-full flex-row items-center justify-center">
           <View className="flex-row items-center justify-center">
             <Image
               source={require('../../../assets/image/aidvantageLogo.svg')}

@@ -43,7 +43,7 @@ const MyApplications = () => {
       <View>
         <ButtonFilled
           title={"Apply"}
-          onClick={() => router.push("/ApplicationForm")}
+          onClick={() => router.push("/(medical)/ApplicationForm")}
           prefixIcon={"pluscircle"}
         />
       </View>

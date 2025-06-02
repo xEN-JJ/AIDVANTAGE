@@ -1,4 +1,4 @@
-import { View, Text, Pressable, ScrollView } from "react-native";
+import { View, Text, Pressable, ScrollView, Image } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
@@ -6,6 +6,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import TextField from "../../components/TextField";
 import AssistanceCard from "../../components/AssistanceCard";
 import { images } from "../../constants";
+import { LinearGradient } from "expo-linear-gradient";
 
 const Home = () => {
   const assistance = [
@@ -22,12 +23,14 @@ const Home = () => {
       link: "/educational-assistance",
     },
     {
-      title: "burial Assistance",
-      description: "Lorem",
-      link: "/medical-assistance",
+      title: "Burial Assistance",
+      description:
+        "Provides financial support to families in crisis to help cover funeral and burial expenses for a deceased loved one.",
+      link: "/burial-assistance",
+      cover: images.burialProfile,
     },
     {
-      title: "burial Assistance",
+      title: "Relief Assistance",
       description: "Lorem",
       link: "/medical-assistance",
     },
@@ -44,7 +47,24 @@ const Home = () => {
           </Pressable>
         </View>
 
-        <View className="w-full h-[120px] bg-primary rounded-xl"></View>
+        <View className="w-full h-[120px] bg-primary rounded-xl justify-center items-center">
+          <LinearGradient
+            colors={["#0F71F1", "#253D6A"]}
+            start={{ x: 0.5, y: -0.9 }}
+            end={{ x: 1, y: 0 }}
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              borderRadius: "0.75rem",
+            }}
+          />
+          <Image
+            source={images.logoWhite}
+            style={{ height: 120, width: "80%" }}
+            resizeMode="contain"
+          />
+        </View>
 
         <View>
           <Text className="text-3xl font-rbold mt-10 text-blue-500">

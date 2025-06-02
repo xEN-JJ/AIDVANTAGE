@@ -117,10 +117,7 @@ const Register = () => {
               }}
             >
               {steps.map((fields, index) => (
-                <View
-                  key={index}
-                  style={{ width, paddingHorizontal: 0 }}
-                >
+                <View key={index} style={{ width, paddingHorizontal: 0 }}>
                   <View style={{ width: "86%" }}>
                     {fields.map((field) => (
                       <TextField
@@ -148,7 +145,7 @@ const Register = () => {
           </View>
 
           {/* Login Link */}
-          <View className="flex flex-row gap-1 justify-center items-end mt-4 mb-[5rem] ">
+          <View className="flex flex-row gap-1 justify-center items-end mt-4">
             <Text className="text-[#787575]">Already have an account?</Text>
             <Link href="/signIn" className="text-blue-500">
               Login Now

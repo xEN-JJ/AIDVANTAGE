@@ -4,7 +4,7 @@ import React from "react";
 const ButtonOutlined = ({ title, onClick, isDisable }) => {
   return (
     <TouchableOpacity
-      className="flex items-center justify-center border enabled:border-primary bg-transparent w-full max-w-[23rem] h-[50px] rounded-md disabled:bg-gray-300 disabled:border-gray-400 will-change-auto"
+      className="flex items-center justify-center border enabled:border-primary bg-transparent w-full h-[50px] rounded-lg disabled:bg-gray-300 disabled:border-gray-400 will-change-auto"
       onPress={onClick}
       disabled={isDisable}
     >
