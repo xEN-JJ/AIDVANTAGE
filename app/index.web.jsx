@@ -2,7 +2,7 @@ import { View, Text, ScrollView, Image } from "react-native";
 import React from "react";
 import { images } from "../constants";
 import ButtonFilled from "../components/ButtonFilled";
-import CustomNavBar from "../modules/auth/components/CustomNavBar.web";
+import CustomNavBar from "../modules/auth/components/CustomNavBar";
 import { useRouter } from "expo-router";
 
 const IndexWeb = () => {

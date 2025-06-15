@@ -30,8 +30,8 @@ export default function CustomNavBar() {
             <View>
               <ToggleButton
                 onToggle={(type) => {
-                  if (type === 'login') router.push('/register');
-                  else router.push('/signIn');
+                  if (type === 'login') router.push('/signIn');
+                  else router.push('/register');
                 }}
               />
             </View>
