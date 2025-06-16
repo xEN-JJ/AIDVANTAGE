@@ -11,7 +11,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import DocumentPickerField from "../../components/DocumentPicker";
 import TextField from "../../components/TextField";
-import ProgressBar from "../../components/ProgressBar";
+import ProgressBar from "../../components/ProgressIndicator";
 import ButtonOutlined from "../../components/ButtonOutline";
 import ButtonFilled from "../../components/ButtonFilled";
 import RadioButtons from "../../components/RadioButtons";
