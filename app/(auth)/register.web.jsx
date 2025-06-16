@@ -13,7 +13,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, router } from "expo-router";
 
 import { images } from "../../constants";
-import TextField from "../../components/TextField";
+import TextField from "../../components/TextField.web";
 import ButtonFilled from "../../components/ButtonFilled";
 import ButtonOutlined from "../../components/ButtonOutline";
 import RegistrationModal from "../../components/Modals/RegistrationModal";
@@ -78,6 +78,7 @@ const Register = () => {
     setVisible(false);
   };
 
+  
   return (
     <View className="flex-1 bg-white">
       <CustomNavBar />
@@ -120,7 +121,7 @@ const Register = () => {
                   </View>
                 </View>
                 {/* Form Fields */}
-                <View style={{ overflow: "hidden" }}>
+                <View style={{ overflow: "hidden", width }}>
                   <Animated.View
                     style={{
                       flexDirection: "row",
@@ -131,19 +132,18 @@ const Register = () => {
                     {steps.map((fields, index) => (
                       <View
                         key={index}
-                        style={{ width, paddingHorizontal: 0 }}
+                        className="w-full px-2"
+                        style={{ width, paddingHorizontal: 8 }}
                       >
-                        <View className="w-full">
-                          {fields.map((field) => (
-                            <TextField
-                              key={field.key}
-                              title={field.placeholder}
-                              secureTextEntry={field.secure}
-                              value={formData[field.key] || ""}
-                              onChangeText={(text) => handleChange(field.key, text)}
-                            />
-                          ))}
-                        </View>
+                        {fields.map((field) => (
+                          <TextField
+                            key={field.key}
+                            title={field.placeholder}
+                            secureTextEntry={field.secure}
+                            value={formData[field.key] || ""}
+                            onChangeText={(text) => handleChange(field.key, text)}
+                          />
+                        ))}
                       </View>
                     ))}
                   </Animated.View>
