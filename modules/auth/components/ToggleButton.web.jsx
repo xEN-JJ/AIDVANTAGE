@@ -27,8 +27,14 @@ export default function ToggleButton({ onToggle }) {
   });
 
   return (
-    <View style={tw`flex-row justify-center items-center`}>
-      <Animated.View style={{ borderRadius: 24, backgroundColor: loginBg }}>
+    <View style={tw`flex-row justify-center items-center gap-2`}>
+      <Animated.View
+        style={{
+          borderRadius: 24,
+          borderColor: loginBg,
+          borderWidth: 2
+        }}
+      >
         <CustomNavBarButton
           text="Log In"
           onPress={() => handleToggle("login")}

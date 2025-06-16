@@ -9,9 +9,8 @@ const IndexWeb = () => {
   const router = useRouter();
 
   return (
-    <View>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <CustomNavBar />
-      <ScrollView>
         <View className="flex flex-row justify-center items-center">
           <View className="justify-center items-center">
             <Image
@@ -19,7 +18,10 @@ const IndexWeb = () => {
               resizeMode="contain"
               style={{ height: 250, marginBottom: 20 }}
             />
-            <ButtonFilled title="Getting Started  -> " onClick={() => router.push("/signIn")} />
+            <View>
+                <ButtonFilled title="Getting Started  -> " onClick={() => router.push("/signIn")} />
+            </View>
+            
           </View>
           <View className="justify-center items-center">
             <Image
@@ -38,8 +40,8 @@ const IndexWeb = () => {
             />
           </View>
         </View>
-      </ScrollView>
-    </View>
+    
+    </ScrollView>
   );
 };
 
