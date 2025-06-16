@@ -214,7 +214,7 @@ const ApplicationForm = () => {
                   listMode="SCROLLVIEW"
                   style={{ borderColor: "#000", marginBottom: 16 }}
                   dropDownContainerStyle={{ borderColor: "#000" }}
-                  zIndex={1000}
+                  zIndex={800}
                 />
 
                 <TextField
