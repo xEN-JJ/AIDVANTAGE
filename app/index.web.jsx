@@ -12,11 +12,11 @@ const IndexWeb = () => {
     <ScrollView showsVerticalScrollIndicator={false}>
       <CustomNavBar />
       <View className="flex flex-row justify-center items-center">
-        <View className="justify-center items-center">
+        <View className="grid justify-items-start">
           <Image
             source={images.logoBlue}
             resizeMode="contain"
-            style={{ height: 250, marginBottom: 20 }}
+            style={{ height: 250, marginBottom: 20, width: 500 }}
           />
           <View>
             <ButtonFilled

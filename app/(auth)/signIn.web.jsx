@@ -7,7 +7,9 @@ import { Link, router } from "expo-router";
 import ButtonFilled from "../../components/ButtonFilled";
 import CustomNavBar from "../../modules/auth/components/CustomNavBar.web";
 
-const SignInWeb = () => {
+
+const SignIn = () => {
+  
   return (
     <ScrollView>
       <CustomNavBar />
