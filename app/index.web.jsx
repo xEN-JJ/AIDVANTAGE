@@ -29,6 +29,7 @@ const IndexWeb = () => {
             style={{ width: "50rem", height: "40rem" }}
           />
         </View>
+    
       </View>
       <View className="w-full h-[100rem] bg-primary justify-start">
         <View className=" items-end justify-start">

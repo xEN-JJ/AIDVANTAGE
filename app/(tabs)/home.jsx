@@ -14,12 +14,13 @@ const Home = () => {
       title: "Medical Assistance",
       description:
         "Provides financial support for individuals and families in crisis who need assistance with medical expenses.",
-      link: "/medicalAssistance",
+      link: "/medical-assistance",
       cover: images.medicalCover,
     },
     {
       title: "Educational Assistance",
-      description: "Provides financial support to students from low-income families to help cover school-related expenses such as tuition, supplies, and transportation.",
+      description:
+        "Provides financial support to students from low-income families to help cover school-related expenses such as tuition, supplies, and transportation.",
       link: "/educational-assistance",
       cover: images.burialProfile,
     },
@@ -32,7 +33,8 @@ const Home = () => {
     },
     {
       title: "Relief Assistance",
-      description: "Provides immediate aid in the form of food, water, and basic necessities to individuals and families affected by natural disasters or emergencies.",
+      description:
+        "Provides immediate aid in the form of food, water, and basic necessities to individuals and families affected by natural disasters or emergencies.",
       link: "/relief-assistance",
       cover: images.burialProfile,
     },
@@ -55,10 +57,10 @@ const Home = () => {
             start={{ x: 0.5, y: -0.9 }}
             end={{ x: 1, y: 0 }}
             style={{
-              position: 'absolute',
+              position: "absolute",
               width: "100%",
               height: "100%",
-              borderRadius: "0.75rem,
+              borderRadius: "0.75rem",
             }}
           />
           <Image

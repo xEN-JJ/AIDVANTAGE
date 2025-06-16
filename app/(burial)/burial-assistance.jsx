@@ -23,60 +23,75 @@ const BurialAssistance = () => {
             <Text className="font-rsemibold">
               City Social Welfare and Development Office
             </Text>{" "}
-            aims to support families during difficult times through the Burial Assistance Program. 
-            This initiative is designed to provide financial assistance to cover funeral and related expenses, 
-            ensuring that families can honor their deceased loved ones without undue financial strain.
+            aims to support families during difficult times through the Burial
+            Assistance Program. This initiative is designed to provide financial
+            assistance to cover funeral and related expenses, ensuring that
+            families can honor their deceased loved ones without undue financial
+            strain.
           </Text>
 
           <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             Objectives
           </Text>
           <Text className="px-6 text-justify font-rlight text-black text-base/6 text-pretty">
-            1. To provide timely financial support for funeral and burial expenses.{"\n\n"}
-            2. To assist families in transporting the deceased to their residence or burial site.{"\n\n"}
-            3. To alleviate the financial burden associated with cremation or burial services for marginalized and vulnerable sectors.
+            1. To provide timely financial support for funeral and burial
+            expenses.{"\n\n"}
+            2. To assist families in transporting the deceased to their
+            residence or burial site.{"\n\n"}
+            3. To alleviate the financial burden associated with cremation or
+            burial services for marginalized and vulnerable sectors.
           </Text>
 
           <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             Services Offered
           </Text>
           <Text className="px-6 text-justify font-rlight text-black text-base/6 text-pretty">
-            • <Text className="font-rsemibold">Funeral Cost Assistance:</Text> Financial support to cover funeral-related expenses, including funeral home services.{"\n\n"}
-            • <Text className="font-rsemibold">Transport of Remains:</Text> Assistance in transporting the deceased from the place of death to their residence or burial site.{"\n\n"}
-            • <Text className="font-rsemibold">Cremation Cost Support:</Text> Coverage for cremation expenses, ensuring a dignified send-off.
+            • <Text className="font-rsemibold">Funeral Cost Assistance:</Text>{" "}
+            Financial support to cover funeral-related expenses, including
+            funeral home services.{"\n\n"}•{" "}
+            <Text className="font-rsemibold">Transport of Remains:</Text>{" "}
+            Assistance in transporting the deceased from the place of death to
+            their residence or burial site.{"\n\n"}•{" "}
+            <Text className="font-rsemibold">Cremation Cost Support:</Text>{" "}
+            Coverage for cremation expenses, ensuring a dignified send-off.
           </Text>
 
           <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             How to Apply
           </Text>
           <Text className="px-6 text-justify font-rlight text-black text-base/6 text-pretty">
-            1. Visit the City Social Welfare and Development Office (CSWDO) during office hours (8:00 AM – 5:00 PM).{"\n\n"}
-            2. Submit all required documents, including:{"\n"}
-            • Photocopy of the deceased's Death Certificate.{"\n"}
-            • OSCA ID and Certification of Membership (for Senior Citizens).{"\n"}
-            • PWD ID and Certification of Membership (for Persons with Disabilities).{"\n"}
-            • Solo Parent ID (if applicable).{"\n"}
-            • Affidavit of residency (if the deceased died outside Naga City but was a registered resident of Naga City).{"\n"}
+            1. Visit the City Social Welfare and Development Office (CSWDO)
+            during office hours (8:00 AM – 5:00 PM).{"\n\n"}
+            2. Submit all required documents, including:{"\n"}• Photocopy of the
+            deceased's Death Certificate.{"\n"}• OSCA ID and Certification of
+            Membership (for Senior Citizens).{"\n"}• PWD ID and Certification of
+            Membership (for Persons with Disabilities).{"\n"}• Solo Parent ID
+            (if applicable).{"\n"}• Affidavit of residency (if the deceased died
+            outside Naga City but was a registered resident of Naga City).{"\n"}
             • Original Funeral Contract.{"\n\n"}
-            3. Undergo an interview or assessment conducted by program staff to evaluate the applicant’s needs and eligibility.
+            3. Undergo an interview or assessment conducted by program staff to
+            evaluate the applicant’s needs and eligibility.
           </Text>
 
           <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
             Contact Information
           </Text>
           <Text className="px-6 text-justify font-rlight text-black text-base/6 text-pretty">
-            For inquiries or assistance, please contact the [Office Name] at:{"\n"}
-            • Hotline: +63-54-205-2980 (Globe) | +63-54-871-2050 (PLDT){"\n"}
-            • Email: cswdo@naga.gov.ph{"\n"}
-            • Office Address: City Social Welfare Development Office G/F Social Development Center, Naga City Hall Complex, Juan Q. Miranda Ave., Concepcion Pequeña, Naga City
+            For inquiries or assistance, please contact the [Office Name] at:
+            {"\n"}• Hotline: +63-54-205-2980 (Globe) | +63-54-871-2050 (PLDT)
+            {"\n"}• Email: cswdo@naga.gov.ph{"\n"}• Office Address: City Social
+            Welfare Development Office G/F Social Development Center, Naga City
+            Hall Complex, Juan Q. Miranda Ave., Concepcion Pequeña, Naga City
           </Text>
 
           <Text className="font-rsemibold text-xl py-5 px-6 text-primary">
             Commitment to Health and Welfare
           </Text>
           <Text className="px-6 pb-3 text-justify font-rlight text-black text-base/6 text-pretty">
-            The Burial Assistance Program is part of the local government's ongoing commitment to support the community in times of crisis. 
-            By addressing funeral-related needs, the CSWDO seeks to provide dignity and relief to grieving families.
+            The Burial Assistance Program is part of the local government's
+            ongoing commitment to support the community in times of crisis. By
+            addressing funeral-related needs, the CSWDO seeks to provide dignity
+            and relief to grieving families.
           </Text>
         </View>
 
@@ -99,7 +114,22 @@ const BurialAssistance = () => {
                         \n• Funeral Contract or Quotation from the funeral service provider.`}
           />
         </View>
+        <View>
+          <Text className="font-rsemibold text-xl py-5 uppercase text-primary px-6">
+            How to Apply
+          </Text>
 
+          <Text>
+            1. Visit the City Social Welfare and Development Office (CSWDO)
+            during office hours (8:00 AM - 5:00 PM).{"\n "}Submit all required
+            documents, including: Request Job Order from Mayor’s Office
+            (Building , room 00) Valid ID (List of accepted Valid ID) Proof of
+            residency and any supporting documents indicating food insecurity,
+            such as a barangay certification or disaster incident report.
+            Undergo an interview or assessment conducted by program staff to
+            evaluate the applicant's needs and eligibility. Contact Information
+          </Text>
+        </View>
         <View className="w-full px-5 my-7">
           <ButtonFilled
             title="Apply"
