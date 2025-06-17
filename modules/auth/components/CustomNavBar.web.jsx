@@ -25,11 +25,6 @@ export default function CustomNavBar() {
               SERVICES
             </Text>
           </Pressable>
-          <Pressable onPress={() => router.push("/news")}>
-            <Text className="text-white text-base font-medium px-5 rounded-md">
-              NEWS
-            </Text>
-          </Pressable>
           <Pressable onPress={() => router.push("/aboutus")}>
             <Text className="text-white text-base font-medium px-5 rounded-md">
               ABOUT US

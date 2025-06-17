@@ -293,6 +293,7 @@ const ApplicationForm = () => {
               className="border border-blue-700 rounded-md mb-3"
               title="Back"
               onClick={handleBack}
+              borderColor={"primary"}
             />
           )}
           <ButtonFilled

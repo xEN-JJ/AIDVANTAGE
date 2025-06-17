@@ -21,15 +21,15 @@ const DocumentPickerField = ({ label }) => {
   };
   return (
     <View
-      className={`justify-center border h-[68] max-w-[22rem] rounded-xl justify-center px-5 w-full ${name ? "border-primary bg-primary " : "border-gray-500"}`}
+      className={`justify-center border h-[68] rounded-xl px-5 w-full ${name ? "border-primary bg-primary " : "border-gray-500"}`}
     >
       <TouchableOpacity
-        className="bg-transparent justify-between flex flex-row"
+        className="bg-transparent justify-between flex flex-row w-full"
         onPress={pick}
       >
-        <View className="max-w-[14rem] justify-center">
+        <View className="w-[15rem] justify-center">
           <Text
-            className={`font-rmedium text-lg mt-2 ${name ? "text-white" : ""}`}
+            className={`font-rmedium text-lg mt-2 ${name ? "text-white line-clamp-1" : ""}`}
           >
             {label}
           </Text>

@@ -20,7 +20,9 @@ const MedicalAssistanceWeb = () => {
         </View>
 
         <View className="w-full px-[10rem] mt-5">
-          <Text className="text-primary text-3xl font-rbold">{title}</Text>
+          <Text className="text-primary text-3xl font-rbold">
+            Medical Assistance
+          </Text>
           <Text className=" text-justify font-rlight text-black text-lg/6 mt-8 text-pretty">
             The{" "}
             <Text className="font-rsemibold">

@@ -125,14 +125,6 @@ const IndexWeb = () => {
             {"\n \n"}
             Together, we can create lasting change.
           </Text>
-
-          <View className="mt-10 w-[40%] ">
-            <ButtonOutlined
-              title={"Donate"}
-              textColor={"white"}
-              borderColor={"white"}
-            />
-          </View>
         </View>
       </View>
     </ScrollView>
