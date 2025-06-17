@@ -92,15 +92,14 @@ const Register = () => {
           contentContainerStyle={{ flexGrow: 1 }}
         >
           <View className="flex flex-col lg:flex-row min-h-screen">
-
             {/* Left Side - Image */}
-            <View className="lg:w-1/2 w-full bg-white items-center justify-center p-6">
+            <View className="lg:w-1/2 bg-white items-center justify-center">
               <Image
                 source={images.logoBlue}
-                resizeMode="center"
-                className="w-[60%] mb-4"
+                resizeMode="contain"
+                className="w-[20%] mb-4"
               />
-              <Text className="text-center text-xl text-gray-700 font-rlight px-4">
+              <Text className="text-center text-xl text-gray-700 font-rmedium px-4">
                 Create your profile to access municipal assistance and services.
               </Text>
             </View>

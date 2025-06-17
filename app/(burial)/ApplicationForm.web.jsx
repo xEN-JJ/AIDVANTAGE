@@ -57,8 +57,10 @@ const ApplicationForm = () => {
 
   const documents = [
     { key: "validID", title: "Valid ID" },
-    { key: "medAbs", title: "Medical Abstract / Doctor's Certifcate" },
-    { key: "hispitalBill", title: "Final Hospital Bill" },
+    { key: "pwdID", title: "PWD ID" },
+    { key: "relaDC", title: "Relatives Death Certifcate" },
+    { key: "funCON", title: "Funeral COntract" },
+    { key: "affRES", title: "Affidavit of Residency" },
   ];
 
   const handleChange = (key, value) => {
@@ -107,35 +109,20 @@ const ApplicationForm = () => {
       <CustomNavBar />
       <View className="mt-10 items-center">
         {/* Header */}
-        <View className="flex-row items-center justify-center mt-2 mb-2 w-[50%]">
-          <Text className="text-3xl text-blue-700 font-bold ">
-            {step + 1}/3
-          </Text>
-          <View className="ml-4">
-            <Text className="text-2xl font-semibold text-blue-700 ">
-              {
-                [
-                  "Personal Information",
-                  "Family Composition",
-                  "Document Submission",
-                ][step]
-              }
+        <View className="flex flex-row justify-center items-center mb-6 mt-4">
+          <ProgressIndicator step={step + 1} total={3}/>
+          <View className="flex flex-col items-start pl-4 ml-6 gap-3">
+            <Text className="text-2xl font-semibold text-primary mt-3">
+              {["Personal Information", "Family Composition", "Document Submission"][step]}
             </Text>
-            <Text className="text-lg text-gray-500">
-              {
-                [
-                  "Fill out the fields",
-                  "List all the members in your household",
-                  "Submit required documents",
-                ][step]
-              }
+            <Text className="text-base text-gray-500">
+              {[
+                "Fill out the fields",
+                "List all the members in your household",
+                "Submit all the requirements that this assistance requires",
+              ][step]}
             </Text>
           </View>
-        </View>
-
-        {/* Progress Bar */}
-        <View className="my-5 w-[50%] items-center">
-          <ProgressIndicator progress={(step + 1) * 0.34} />
         </View>
 
         {/* Step container with overflow hidden */}
@@ -149,7 +136,7 @@ const ApplicationForm = () => {
           >
             {/* Step 1 */}
             <View style={{ width, alignItems: "center" }}>
-              <View className="w-[90%] max-w-xl gap-3">
+              <View className="w-[20%] max-w-xl gap-3">
                 <CustomDropDownPicker
                   value={typeOfAssistance}
                   setValue={setTypeOfAssistance}
@@ -195,7 +182,7 @@ const ApplicationForm = () => {
                   listMode="SCROLLVIEW"
                   style={{ borderColor: "#000", marginBottom: 16 }}
                   dropDownContainerStyle={{ borderColor: "#000" }}
-                  zIndex={1000}
+                  zIndex={2000}
                 />
 
                 <TextField
@@ -214,7 +201,7 @@ const ApplicationForm = () => {
                   listMode="SCROLLVIEW"
                   style={{ borderColor: "#000", marginBottom: 16 }}
                   dropDownContainerStyle={{ borderColor: "#000" }}
-                  zIndex={800}
+                  zIndex={1000}
                 />
 
                 <TextField
@@ -300,13 +287,13 @@ const ApplicationForm = () => {
             onClick={
               step === 2
                 ? () => {
-                    console.log({ formData, household, uploadedDocs });
-                    Alert.alert(
-                      "Submitted",
-                      "Your application has been submitted."
-                    );
-                    handleSuccessModal(true);
-                  }
+                  console.log({ formData, household, uploadedDocs });
+                  Alert.alert(
+                    "Submitted",
+                    "Your application has been submitted."
+                  );
+                  handleSuccessModal(true);
+                }
                 : handleNext
             }
           />

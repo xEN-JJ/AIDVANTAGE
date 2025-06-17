@@ -8,16 +8,16 @@ import ButtonFilled from "../../components/ButtonFilled";
 import CustomNavBar from "../../modules/auth/components/CustomNavBar.web";
 
 
-const SignIn = () => {
+const SignInWeb = () => {
   
   return (
     <ScrollView>
       <CustomNavBar />
       <View
-        className={`flex flex-row justify-center items-center gap-[10%] mt-10 h-[100%]`}
+        className={`flex flex-row justify-center items-center gap-[10%] mt-20 h-[100%]`}
       >
         <View className="">
-          <Text className="text-center text-3xl text-gray-700 font-rlight">
+          <Text className="text-center text-3xl text-gray-700 font-rsemibold">
             Welcome to
           </Text>
           <Image
@@ -28,12 +28,12 @@ const SignIn = () => {
           />
         </View>
 
-        <View className="w-[30%] bg-white px-7 justify-center h-[90%] rounded-lg">
-          <Text className="font-rbold text-5xl">Log in</Text>
+        <View className="w-[20%] bg-white px-7 justify-center h-[90%] rounded-xl shadow-lg">
+          <Text className="font-rbold text-5xl text-primary">Log in</Text>
           <View className=" w-full mt-10">
             <TextField title="Email Address" isError={true} />
             <TextField title="Password" secureTextEntry={true} isError={true} />
-            <View className="items-end ">
+            <View className="items-start">
               <Link href="/reset-password" className=" text-blue-500">
                 Forgot Password
               </Link>
