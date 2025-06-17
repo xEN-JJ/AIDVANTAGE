@@ -5,7 +5,6 @@ import { icons } from "../constants";
 const ButtonFilled = ({
   title,
   onClick,
-  otherStyles,
   isDisable,
   prefixIcon,
   suffixIcon,

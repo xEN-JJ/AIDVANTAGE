@@ -20,6 +20,7 @@ import openMindenessIcon from "../assets/image/open-mindness.png";
 import religiosityIcon from "../assets/image/religiosity.png";
 import resiliencelIcon from "../assets/image/resilience.png";
 import cswdoHead from "../assets/image/cswdo-head.jpg";
+import donateImage from "../assets/image/donate-image.png";
 
 export default {
   logoBlue,
@@ -44,4 +45,5 @@ export default {
   religiosityIcon,
   resiliencelIcon,
   cswdoHead,
+  donateImage,
 };
