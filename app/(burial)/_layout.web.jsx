@@ -8,12 +8,14 @@ export default function BurialLayout() {
         name="burial-assistance"
         options={{
           title: "Burial Assistance",
+          headerShown: false,
         }}
       />
       <Stack.Screen
         name="ApplicationForm"
         options={{
           title: "Application Form",
+          headerShown: false,
         }}
       />
     </Stack>
