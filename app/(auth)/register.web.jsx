@@ -74,7 +74,7 @@ const Register = () => {
   };
 
   const handleModalCLick = () => {
-    router.push("/home");
+    router.push("/services");
     setVisible(false);
   };
 
