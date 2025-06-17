@@ -10,14 +10,14 @@ const MyApplications = () => {
   const applications = [
     {
       applicationId: 1,
-      typeOfAssistance: "Medical Assistance",
-      dateOfApplication: "02/18/2024",
+      typeOfAssistance: "Educational Assistance",
+      dateOfApplication: "06/02/2025",
       status: "pending",
     },
     {
       applicationId: 1,
       typeOfAssistance: "Educational Assistance",
-      dateOfApplication: "06/28/2024",
+      dateOfApplication: "05/28/2025",
       status: "declined",
     },
     {
@@ -28,16 +28,16 @@ const MyApplications = () => {
     },
     {
       applicationId: 1,
-      typeOfAssistance: "Relief Assistance",
+      typeOfAssistance: "Medical Assistance",
       dateOfApplication: "04/09/2025",
       status: "approved",
     },
   ];
 
   const statusLink = {
-    approved: "Applications/ApproveApplication",
-    declined: "Applications/DeclineApplication",
-    pending: "Applications/PendingApplication",
+    approved: "applications/ApproveApplication",
+    declined: "applications/DeclineApplication",
+    pending: "applications/PendingApplication",
   };
 
   return (
@@ -49,7 +49,7 @@ const MyApplications = () => {
       <View>
         <ButtonFilled
           title={"Apply"}
-          onClick={() => router.push("/(medical)/ApplicationForm")}
+          onClick={() => router.push("/(educational)/ApplicationForm")}
           prefixIcon={"pluscircle"}
         />
       </View>

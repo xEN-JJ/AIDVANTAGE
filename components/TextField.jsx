@@ -7,11 +7,8 @@ const TextField = ({
   secureTextEntry,
   value,
   onChangeText,
-<<<<<<< HEAD
-=======
   rules = [], // array of functions returning error messages or null
   debounceTime = 500,
->>>>>>> 93edd80a2982f513e7a8dff82f89ccf81052b882
 }) => {
   const [internalValue, setInternalValue] = useState(value || "");
   const [errors, setErrors] = useState([]);
@@ -78,11 +75,7 @@ const TextField = ({
   const isError = errors.length > 0;
 
   return (
-<<<<<<< HEAD
-    <View className="rounded-md justify-center mb-3 w-full ">
-=======
     <View className="rounded-md justify-center mb-3 w-full">
->>>>>>> 93edd80a2982f513e7a8dff82f89ccf81052b882
       <Animated.View
         className="absolute justify-center px-3 bg-[#fefffe] z-40 ml-5 top-6"
         style={{

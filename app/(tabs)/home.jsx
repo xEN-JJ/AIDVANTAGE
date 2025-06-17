@@ -48,7 +48,7 @@ const Home = () => {
           </Pressable>
         </View>
 
-        <View className="w-full h-[120px] bg-primary rounded-xl justify-center items-center">
+        <View className="w-full h-[122px] bg-primary rounded-xl justify-center items-center">
           <LinearGradient
             colors={["#0F71F1", "#253D6A"]}
             start={{ x: 0.5, y: -0.9 }}
@@ -57,7 +57,7 @@ const Home = () => {
               position: 'absolute',
               width: "100%",
               height: "100%",
-              borderRadius: "0.75rem,
+              borderRadius: "0.75rem",
             }}
           />
           <Image

@@ -8,35 +8,59 @@ export default function CustomNavBar() {
   const router = useRouter();
 
   return (
-    <View className="h-[5rem] bg-primary flex-row items-center justify-center">
-        <View className="w-full flex-row items-center justify-center">
-          <View className="flex-row items-center justify-center">
-            <Image
-              source={require('../../../assets/image/aidvantageLogo.svg')}
-              style={{ width: 180, resizeMode: 'contain' }}
+    <View className="h-[4rem] bg-primary shadow-lg">
+      <View className="max-w-7xl mx-auto w-full h-full flex-row items-center justify-between px-6">
+        {/* Logo Section */}
+        <Pressable 
+          onPress={() => router.push('/')}
+          className="flex-row items-center"
+        >
+          <Image
+            source={require('../../../assets/image/aidvantageLogo.svg')}
+            style={{ width: 160, height: 40, resizeMode: 'contain' }}
+          />
+        </Pressable>
+
+        {/* Navigation Links */}
+        <View className="flex-row items-center space-x-8">
+          <Pressable 
+            onPress={() => router.push('/services')}
+            className="px-4 py-2 hover:bg-blue-700 rounded-md transition-colors"
+          >
+            <Text className="text-white text-sm font-semibold tracking-wide uppercase">
+              SERVICES
+            </Text>
+          </Pressable>
+          
+          <Pressable 
+            onPress={() => router.push('/news')}
+            className="px-4 py-2 hover:bg-blue-700 rounded-md transition-colors"
+          >
+            <Text className="text-white text-sm font-semibold tracking-wide uppercase">
+              NEWS
+            </Text>
+          </Pressable>
+          
+          <Pressable 
+            onPress={() => router.push('/aboutus')}
+            className="px-4 py-2 hover:bg-blue-700 rounded-md transition-colors"
+          >
+            <Text className="text-white text-sm font-semibold tracking-wide uppercase">
+              ABOUT US
+            </Text>
+          </Pressable>
+
+          {/* Auth Buttons */}
+          <View className="flex-row items-center ml-4">
+            <ToggleButton
+              onToggle={(type) => {
+                if (type === 'login') router.push('/register');
+                else router.push('/signIn');
+              }}
             />
           </View>
-
-          <View className="flex-row items-center">
-            <Pressable onPress={() => router.push('/services')}>
-              <Text className="text-white text-base font-medium px-5 rounded-md">SERVICES</Text>
-            </Pressable>
-            <Pressable onPress={() => router.push('/news')}>
-              <Text className="text-white text-base font-medium px-5 rounded-md">NEWS</Text>
-            </Pressable>
-            <Pressable onPress={() => router.push('/aboutus')}>
-              <Text className="text-white text-base font-medium px-5 rounded-md">ABOUT US</Text>
-            </Pressable>
-            <View>
-              <ToggleButton
-                onToggle={(type) => {
-                  if (type === 'login') router.push('/register');
-                  else router.push('/signIn');
-                }}
-              />
-            </View>
-          </View>
         </View>
+      </View>
     </View>
   );
 }

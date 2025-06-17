@@ -23,7 +23,7 @@ const FilePreview = ({ status }) => {
       <View className="flex flex-row gap-2 mt-2 mb-3">
         {icons && icons[status]}
         <Text className="text-lg text-white font-rmedium">
-          Medical Certificate
+          Statement of Account
         </Text>
       </View>
       <View className="w-full bg-gray-200 rounded-xl">

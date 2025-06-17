@@ -1,16 +1,12 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
 
-<<<<<<< HEAD
-const ApplicationItems = ({ assistance, dateOfApplication, status, onClick }) => {
-=======
 const ApplicationItems = ({
   assistance,
   dateOfApplication,
   status,
   onClick,
 }) => {
->>>>>>> 93edd80a2982f513e7a8dff82f89ccf81052b882
   const statusClasses = {
     pending: {
       border: "border-[#0F71F1]",

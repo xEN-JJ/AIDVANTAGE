@@ -1,49 +1,35 @@
-import React, { useRef, useState } from "react";
-import { View, Animated } from "react-native";
-import CustomNavBarButton from "./CustomNavBarButton.web";
-import tw from "twrnc";
+import React, { useState } from "react";
+import { View, Pressable, Text } from "react-native";
 
 export default function ToggleButton({ onToggle }) {
   const [selected, setSelected] = useState("login");
-  const anim = useRef(new Animated.Value(0)).current;
 
   const handleToggle = (type) => {
     setSelected(type);
-    Animated.timing(anim, {
-      toValue: type === "login" ? 0 : 1,
-      duration: 250,
-      useNativeDriver: false,
-    }).start();
     if (onToggle) onToggle(type);
   };
 
-  const loginBg = anim.interpolate({
-    inputRange: [0, 1],
-    outputRange: ["#2563eb", "#e5e7eb"],
-  });
-  const signupBg = anim.interpolate({
-    inputRange: [0, 1],
-    outputRange: ["#e5e7eb", "#2563eb"],
-  });
-
   return (
-    <View style={tw`flex-row justify-center items-center`}>
-      <Animated.View style={{ borderRadius: 24, backgroundColor: loginBg }}>
-        <CustomNavBarButton
-          text="Log In"
-          onPress={() => handleToggle("login")}
-          buttonClassName={`w-24 h-10 rounded-3xl justify-center items-center ${selected === "login" ? "" : "bg-gray-200"}`}
-          textClassName={`font-bold ${selected === "login" ? "text-white" : "text-blue-600"}`}
-        />
-      </Animated.View>
-      <Animated.View style={{ borderRadius: 24, backgroundColor: signupBg }}>
-        <CustomNavBarButton
-          text="Sign Up"
-          onPress={() => handleToggle("signup")}
-          buttonClassName={`w-24 h-10 rounded-3xl justify-center items-center ${selected === "signup" ? "" : "bg-gray-200"}`}
-          textClassName={`font-bold ${selected === "signup" ? "text-white" : "text-blue-600"}`}
-        />
-      </Animated.View>
+    <View className="flex-row bg-blue-900 bg-opacity-30 rounded-full border border-gray-400 border-opacity-50 overflow-hidden">
+      {/* Log In Button - Left side with solid blue background */}
+      <Pressable 
+        onPress={() => handleToggle("login")}
+        className="bg-blue-500 hover:bg-blue-600 px-8 py-4 rounded-full"
+      >
+        <Text className="text-white text-sm font-semibold">
+          Log In
+        </Text>
+      </Pressable>
+
+      {/* Sign Up Button - Right side with transparent background */}
+      <Pressable 
+        onPress={() => handleToggle("signup")}
+        className="bg-transparent hover:bg-white hover:bg-opacity-10 px-6 py-4"
+      >
+        <Text className="text-white text-sm font-semibold">
+          Sign Up
+        </Text>
+      </Pressable>
     </View>
   );
 }

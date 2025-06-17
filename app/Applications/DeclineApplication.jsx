@@ -55,7 +55,7 @@ const DeclineApplication = ({ uri }) => {
         <FilePreview
           status={status}
           uri={
-            "https://imgv2-2-f.scribdassets.com/img/document/426522326/original/512af8de0a/1?v=1"
+            "https://sjcdoc.wela.ph/content/images/2021/11/140.png"
           }
         />
       </View>
