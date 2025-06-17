@@ -8,7 +8,6 @@ const AboutUs = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false} className="items-center">
       <CustomNavBar />
-
       <View className="w-full bg-[#253D6A]">
         <View className="items-end">
           <Image source={images.AboutUs} resizeMode="cover" />
@@ -24,7 +23,7 @@ const AboutUs = () => {
             <Text className="text-white text-5xl font-rbold">"</Text>
           </Text>
 
-          <View className="mt-10 w-[40%] ">
+          <View className="mt-10 w-[30%]">
             <ButtonOutlined
               title={"Discover our Story"}
               textColor={"white"}
@@ -33,7 +32,6 @@ const AboutUs = () => {
           </View>
         </View>
       </View>
-
       <View className="items-center justify-center mt-10">
         <View className="items-center justify-center w-[70%]">
           <Text className="text-primary text-5xl font-rblack">Mission</Text>

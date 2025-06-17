@@ -10,7 +10,7 @@ const ButtonOutlined = ({
 }) => {
   return (
     <TouchableOpacity
-      className={`flex items-center justify-center border  bg-transparent w-full h-[50px] rounded-lg disabled:bg-gray-300 disabled:border-gray-400 will-change-auto ${borderColor ? `border-${borderColor}` : "border-primary"}`}
+      className={`flex items-center justify-center border bg-transparent w-full h-[50px] rounded-full disabled:bg-gray-300 disabled:border-gray-400 will-change-auto ${borderColor ? `border-${borderColor}` : "border-primary"}`}
       onPress={onClick}
       disabled={isDisable}
     >
