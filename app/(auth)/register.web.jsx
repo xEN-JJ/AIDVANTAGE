@@ -9,7 +9,6 @@ import {
   Platform,
 } from "react-native";
 import { useState, useRef } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, router } from "expo-router";
 
 import { images } from "../../constants";
@@ -74,11 +73,10 @@ const Register = () => {
   };
 
   const handleModalCLick = () => {
-    router.push("/home");
+    router.push("/");
     setVisible(false);
   };
 
-  
   return (
     <View className="flex-1 bg-white">
       <CustomNavBar />
@@ -92,13 +90,13 @@ const Register = () => {
           contentContainerStyle={{ flexGrow: 1 }}
         >
           <View className="flex flex-col lg:flex-row min-h-screen">
-
             {/* Left Side - Image */}
             <View className="lg:w-1/2 w-full bg-white items-center justify-center p-6">
               <Image
                 source={images.logoBlue}
                 resizeMode="center"
                 className="w-[60%] mb-4"
+                style={{ height: 200, width: 400 }}
               />
               <Text className="text-center text-xl text-gray-700 font-rlight px-4">
                 Create your profile to access municipal assistance and services.
@@ -107,15 +105,19 @@ const Register = () => {
 
             {/* Right Side - Form */}
             <View className="lg:w-1/2 w-full flex items-center justify-center px-4 py-10">
-              <View className="bg-white rounded-2xl shadow-lg p-6 w-[90%] max-w-xl">
+              <View className="bg-white rounded-2xl shadow-lg p-6 w-[70%] max-w-xl">
                 {/* Progress Indicator */}
                 <View className="flex flex-row items-center justify-center mb-6">
-                  <ProgressIndicator step={step + 1} total={steps.length} />
-                  <View className="flex flex-col items-start ml-6 gap-2">
-                    <Text className="text-primary text-xl font-bold">
+                  <ProgressIndicator
+                    step={step + 1}
+                    total={steps.length}
+                    type={"circular"}
+                  />
+                  <View className="flex flex-col items-start ml-6 ">
+                    <Text className="text-primary text-2xl font-rbold">
                       Registration
                     </Text>
-                    <Text className="text-primary text-sm font-light">
+                    <Text className="text-primary text-lg font-rlight">
                       Input your necessary details.
                     </Text>
                   </View>
@@ -132,18 +134,22 @@ const Register = () => {
                     {steps.map((fields, index) => (
                       <View
                         key={index}
-                        className="w-full px-2"
+                        className=" px-2"
                         style={{ width, paddingHorizontal: 8 }}
                       >
-                        {fields.map((field) => (
-                          <TextField
-                            key={field.key}
-                            title={field.placeholder}
-                            secureTextEntry={field.secure}
-                            value={formData[field.key] || ""}
-                            onChangeText={(text) => handleChange(field.key, text)}
-                          />
-                        ))}
+                        <View style={{ width: "30%" }}>
+                          {fields.map((field) => (
+                            <TextField
+                              key={field.key}
+                              title={field.placeholder}
+                              secureTextEntry={field.secure}
+                              value={formData[field.key] || ""}
+                              onChangeText={(text) =>
+                                handleChange(field.key, text)
+                              }
+                            />
+                          ))}
+                        </View>
                       </View>
                     ))}
                   </Animated.View>
@@ -151,9 +157,11 @@ const Register = () => {
 
                 {/* Navigation Buttons */}
                 <View className="gap-3 mt-5">
-                  {step !== 0 && <ButtonOutlined title="Back" onClick={handleBack} />}
+                  {step !== 0 && (
+                    <ButtonOutlined title="Back" onClick={handleBack} />
+                  )}
                   {step === steps.length - 1 ? (
-                    <ButtonFilled title="Sign Up" onClick={handleSubmit} />
+                    <ButtonFilled title="Register" onClick={handleSubmit} />
                   ) : (
                     <ButtonFilled title="Next" onClick={handleNext} />
                   )}
@@ -161,8 +169,12 @@ const Register = () => {
 
                 {/* Login Link */}
                 <View className="flex-row gap-1 justify-center mt-4">
-                  <Text className="text-[#787575]">Already have an account?</Text>
-                  <Link href="/signIn" className="text-blue-500">Login Now</Link>
+                  <Text className="text-[#787575]">
+                    Already have an account?
+                  </Text>
+                  <Link href="/signIn" className="text-blue-500">
+                    Login Now
+                  </Link>
                 </View>
               </View>
             </View>

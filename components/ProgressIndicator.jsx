@@ -1,13 +1,13 @@
 import { View, Text, Platform } from "react-native";
 import * as Progress from "react-native-progress";
 
-const ProgressIndicator = ({ step, total }) => {
-  const isWeb = Platform.OS === 'web';
+const ProgressIndicator = ({ step, total, type }) => {
+  const isWeb = Platform.OS === "web";
   const progress = step / total;
 
   return (
     <View className="items-center justify-center">
-      {isWeb ? (
+      {type === "circular" ? (
         <View className="relative">
           <Progress.Circle
             progress={progress}
@@ -25,7 +25,7 @@ const ProgressIndicator = ({ step, total }) => {
       ) : (
         <Progress.Bar
           progress={progress}
-          width={200}
+          width={300}
           color="#0C3278"
           unfilledColor="#D9D9D9"
           borderWidth={0}

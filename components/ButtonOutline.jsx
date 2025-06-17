@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import React from "react";
 
 const ButtonOutlined = ({
@@ -8,14 +8,32 @@ const ButtonOutlined = ({
   textColor,
   borderColor,
 }) => {
+  const borderClassMap = {
+    white: "border-white",
+    black: "border-black",
+    primary: "border-primary",
+  };
+
+  const textClassMap = {
+    white: "text-white",
+    black: "text-black",
+    primary: "text-primary",
+  };
+
   return (
     <TouchableOpacity
-      className={`flex items-center justify-center border  bg-transparent w-full h-[50px] rounded-lg disabled:bg-gray-300 disabled:border-gray-400 will-change-auto ${borderColor ? `border-${borderColor}` : "border-primary"}`}
+      className={`flex items-center justify-center bg-transparent w-full h-[50px] rounded-lg ${
+        borderClassMap[borderColor] || "border-primary"
+      }`}
       onPress={onClick}
       disabled={isDisable}
     >
       <Text
-        className={`enabled:text-primary font-regular text-md disabled:text-gray-500 will-change-auto ${textColor ? `text-${textColor}` : "text-primary"}`}
+        className={`font-regular text-md will-change-auto ${
+          isDisable
+            ? "text-gray-500"
+            : textClassMap[textColor] || "text-primary"
+        }`}
       >
         {title}
       </Text>

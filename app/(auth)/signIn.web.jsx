@@ -7,9 +7,7 @@ import { Link, router } from "expo-router";
 import ButtonFilled from "../../components/ButtonFilled";
 import CustomNavBar from "../../modules/auth/components/CustomNavBar.web";
 
-
-const SignIn = () => {
-  
+const SignInWeb = () => {
   return (
     <ScrollView>
       <CustomNavBar />
@@ -29,7 +27,7 @@ const SignIn = () => {
         </View>
 
         <View className="w-[30%] bg-white px-7 justify-center h-[90%] rounded-lg">
-          <Text className="font-rbold text-5xl">Log in</Text>
+          <Text className="font-rbold text-5xl text-primary">Log in</Text>
           <View className=" w-full mt-10">
             <TextField title="Email Address" isError={true} />
             <TextField title="Password" secureTextEntry={true} isError={true} />

@@ -11,7 +11,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import DocumentPickerField from "../../components/DocumentPicker";
 import TextField from "../../components/TextField";
-import ProgressBar from "../../components/ProgressBar";
+import ProgressIndicator from "../../components/ProgressIndicator";
 import ButtonOutlined from "../../components/ButtonOutline";
 import ButtonFilled from "../../components/ButtonFilled";
 import RadioButtons from "../../components/RadioButtons";
@@ -135,7 +135,7 @@ const ApplicationForm = () => {
 
         {/* Progress Bar */}
         <View className="my-5 w-[50%] items-center">
-          <ProgressBar progress={(step + 1) * 0.34} />
+          <ProgressIndicator step={step} total={2} />
         </View>
 
         {/* Step container with overflow hidden */}
