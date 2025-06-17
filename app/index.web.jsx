@@ -19,7 +19,10 @@ const IndexWeb = () => {
             style={{ height: 250, marginBottom: 20, width: 500 }}
           />
           <View>
-            <ButtonFilled title="Getting Started  -> " onClick={() => router.push("/signIn")}/>
+            <ButtonFilled
+              title="Getting Started  -> "
+              onClick={() => router.push("/signIn")}
+            />
           </View>
         </View>
         <View className="justify-center items-center">
@@ -29,7 +32,6 @@ const IndexWeb = () => {
             style={{ width: "50rem", height: "40rem" }}
           />
         </View>
-    
       </View>
       <View className="w-full h-[100rem] bg-primary justify-start">
         <View className=" items-end justify-start">
@@ -40,7 +42,6 @@ const IndexWeb = () => {
           />
         </View>
       </View>
-
     </ScrollView>
   );
 };
