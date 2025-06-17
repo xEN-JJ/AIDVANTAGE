@@ -134,7 +134,7 @@ const AboutUs = () => {
             <Text className="text-2xl font-rsemibold mt-10">Contacts: </Text>
             <Text className="text-xl ">
               PLDT: +63-54-871-2050 {" \n"}GLOBE: +63-54-205-2980 {" \n"}
-              GLocal: 3040 {" \n"}GEmail: cswdo@naga.gov.ph
+              Local: 3040 {" \n"}Email: cswdo@naga.gov.ph
             </Text>
           </View>
         </View>
