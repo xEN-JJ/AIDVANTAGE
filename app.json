@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "AIDVANTAGE",
+    "slug": "AIDVANTAGE",
+    "scheme": "AIDVANTAGE-scheme",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/image/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/image/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/image/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "backgroundColor": "#F0F8FF"
+    },
+    "plugins": [
+      "expo-router", [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "91530673-b9f3-4082-8248-096ef38a871c"
+      }
+    },
+    "owner": "graham18",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/91530673-b9f3-4082-8248-096ef38a871c"
+    }
+  }
+}
